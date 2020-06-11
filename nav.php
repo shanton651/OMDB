@@ -84,8 +84,8 @@
 
         <a href="help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
-            <img src="./images/help.png">
-            <br/>help</li>
+            <img src="./images/icons8-help-50.png">
+            <br/>Help</li>
         </a>
 
       </ul>
