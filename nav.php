@@ -17,7 +17,7 @@
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="styles/custom_nav.css" type="text/css">
-        <title>A Basic Composer</title>
+        <title>OMDB | Online Movie Database</title>
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
         <link href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.12/css/dataTables.bootstrap.min.css" rel="stylesheet"/>
         <link rel="stylesheet" href="./mainStyleSheet.css">
@@ -28,15 +28,9 @@
     <div id="nav">
         <ul>
             <a href="index.php">
-              <li class="horozontal-li-logo">
+              <li class="horozontal-li-logo" <?php if($nav_selected == "HOME"){ echo 'class="current-page"'; } ?>>
               <img src ="./images/main_logo.png">
-              <br/>A Basic Composer</li>
-            </a>
-
-            <a href="index.php">
-              <li <?php if($nav_selected == "HOME"){ echo 'class="current-page"'; } ?>>
-              <img src="./images/home.png">
-              <br/>Home</li>
+              <br/>Online Movie Database</li>
             </a>
 
             <a href="list.php">
@@ -51,10 +45,10 @@
               <br/>Timeline</li>
             </a>
 
-            <a href="reports.php">
-              <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
-              <img src="./images/reports.png">
-              <br/>Reports</li>
+            <a href="songs.php">
+              <li <?php if($nav_selected == "SONGS"){ echo 'class="current-page"'; } ?>>
+              <img src="./images/songs.png">
+              <br/>Songs</li>
             </a>
 
             <a href="scanner.php">
@@ -113,8 +107,8 @@
                 include("./left_menu_list.php");
             } elseif ($nav_selected == "TIMELINE") {
                 include("./left_menu_timeline.php");
-            } elseif ($nav_selected == "REPORTS") {
-                include("./left_menu_reports.php");
+            } elseif ($nav_selected == "SONGS") {
+                include("./left_menu_songs.php");
             } elseif ($nav_selected == "SCANNER") {
                 include("./left_menu_scanner.php");
             } elseif ($nav_selected == "HISTORY") {

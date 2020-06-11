@@ -76,6 +76,7 @@ a {
   #nav ul li img {
     max-height: 45px;
     max-width: 80px;
+    margin: 0 0 10px 0;
     clear: both;
   }
   #nav ul li.horozontal-li-logo {
