@@ -39,10 +39,10 @@
               <br/>Home</li>
             </a>
 
-            <a href="list.php">
-              <li <?php if($nav_selected == "LIST"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/list.png">
-                <br/>List</li>
+            <a href="moviesList.php">
+              <li <?php if($nav_selected == "MOVIES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/movie.png">
+                <br/>Movies</li>
             </a>
 
             <a href="timeline.php">
