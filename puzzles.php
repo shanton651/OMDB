@@ -1,5 +1,5 @@
 <?php
-  $nav_selected = "HISTORY";
+  $nav_selected = "PUZZLES";
   $left_buttons = "NO";
   $left_selected = "";
 

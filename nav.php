@@ -57,9 +57,9 @@
                 <br/>Scanner</li>
             </a>
 
-            <a href="history.php">
-              <li <?php if($nav_selected == "HISTORY"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/history.png">
+            <a href="puzzles.php">
+              <li <?php if($nav_selected == "PUZZLES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/Puzzle.png">
                 <br/>History</li>
             </a>
 
