@@ -59,8 +59,8 @@
 
             <a href="puzzles.php">
               <li <?php if($nav_selected == "PUZZLES"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/Puzzle.png">
-                <br/>History</li>
+                <img src="./images/puzzle.png">
+                <br/>Puzzles</li>
             </a>
 
             <a href="trend.php">
