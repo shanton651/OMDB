@@ -52,7 +52,7 @@ INSERT INTO `movies` (`name`, `english_name`, `year`) VALUES
 ('Rec', 'Rec', 2007),
 ('Slumdog Millionaire', 'Slumdog Millionaire', 2008),
 ('The Skin I Live In', 'The Skin I Live In', 2011),
-('Titanic', 'Titanic', 1997);
+('Titanic', 'Titanic', 2000);
 
 --
 -- Indexes for dumped tables
