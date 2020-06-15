@@ -51,10 +51,10 @@
               <br/>Songs</li>
             </a>
 
-            <a href="scanner.php">
-              <li <?php if($nav_selected == "SCANNER"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/scanner.png">
-                <br/>Scanner</li>
+            <a href="reports.php">
+              <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/icons8-medical-history-64.png">
+                <br/>Reports</li>
             </a>
 
             <a href="puzzles.php">
@@ -109,8 +109,8 @@
                 include("./left_menu_timeline.php");
             } elseif ($nav_selected == "SONGS") {
                 include("./left_menu_songs.php");
-            } elseif ($nav_selected == "SCANNER") {
-                include("./left_menu_scanner.php");
+            } elseif ($nav_selected == "REPORTS") {
+                include("./left_menu_reports.php");
             } elseif ($nav_selected == "HISTORY") {
                 include("./left_menu_history.php");
             } elseif ($nav_selected == "TREND") {
