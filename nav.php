@@ -62,7 +62,7 @@
                 <img src="./images/puzzle.png">
                 <br/>Puzzles</li>
             </a>
-
+<!-- 
             <a href="trend.php">
               <li <?php if($nav_selected == "TREND"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/trend.png">
@@ -80,7 +80,7 @@
           <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
             <img src="./images/about.png">
             <br/>About</li>
-        </a>
+        </a> -->
 
         <a href="help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
