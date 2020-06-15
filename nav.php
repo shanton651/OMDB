@@ -62,6 +62,11 @@
                 <img src="./images/scanner.png">
                 <br/>Scanner</li>
             </a>
+      <a href="peoples.php">
+              <li <?php if($nav_selected == "PEOPLES"){ echo 'class="current-page"'; } ?>>
+                <img src="https://img.icons8.com/ios/50/000000/drag-gender-neutral.png"/>">
+                <br/>Peoples</li>
+            </a>
 
             <a href="history.php">
               <li <?php if($nav_selected == "HISTORY"){ echo 'class="current-page"'; } ?>>
@@ -119,6 +124,8 @@
                 include("./left_menu_scanner.php");
             } elseif ($nav_selected == "HISTORY") {
                 include("./left_menu_history.php");
+              } elseif ($nav_selected == "PEOPLES") {
+                include("./left_menu_peoples.php");
             } elseif ($nav_selected == "TREND") {
               include("./left_menu_trend.php");
            } elseif ($nav_selected == "SETUP") {
