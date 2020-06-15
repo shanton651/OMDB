@@ -33,10 +33,10 @@
               <br/>Online Movie Database</li>
             </a>
 
-            <a href="list.php">
-              <li <?php if($nav_selected == "LIST"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/list.png">
-                <br/>List</li>
+            <a href="movieList.php">
+              <li <?php if($nav_selected == "MOVIES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/movies.png">
+                <br/>Movies</li>
             </a>
 
             <a href="timeline.php">
@@ -51,18 +51,23 @@
               <br/>Songs</li>
             </a>
 
-            <a href="scanner.php">
-              <li <?php if($nav_selected == "SCANNER"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/scanner.png">
-                <br/>Scanner</li>
+            <a href="reports.php">
+              <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/icons8-medical-history-64.png">
+                <br/>Reports</li>
+            </a>
+      <a href="peoples.php">
+              <li <?php if($nav_selected == "PEOPLES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/peoples.png"/>">
+                <br/>Peoples</li>
             </a>
 
-            <a href="history.php">
-              <li <?php if($nav_selected == "HISTORY"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/history.png">
-                <br/>History</li>
+            <a href="puzzles.php">
+              <li <?php if($nav_selected == "PUZZLES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/puzzle.png">
+                <br/>Puzzles</li>
             </a>
-
+<!-- 
             <a href="trend.php">
               <li <?php if($nav_selected == "TREND"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/trend.png">
@@ -80,12 +85,12 @@
           <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
             <img src="./images/about.png">
             <br/>About</li>
-        </a>
+        </a> -->
 
         <a href="help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>
-            <img src="./images/help.png">
-            <br/>help</li>
+            <img src="./images/icons8-help-50.png">
+            <br/>Help</li>
         </a>
 
       </ul>
@@ -109,10 +114,12 @@
                 include("./left_menu_timeline.php");
             } elseif ($nav_selected == "SONGS") {
                 include("./left_menu_songs.php");
-            } elseif ($nav_selected == "SCANNER") {
-                include("./left_menu_scanner.php");
+            } elseif ($nav_selected == "REPORTS") {
+                include("./left_menu_reports.php");
             } elseif ($nav_selected == "HISTORY") {
                 include("./left_menu_history.php");
+              } elseif ($nav_selected == "PEOPLES") {
+                include("./left_menu_peoples.php");
             } elseif ($nav_selected == "TREND") {
               include("./left_menu_trend.php");
            } elseif ($nav_selected == "SETUP") {
