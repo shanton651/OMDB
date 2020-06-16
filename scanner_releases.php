@@ -13,7 +13,7 @@
 <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Scanner -> Movies</h3>
+      <h3 style = "color: #01B0F1;">Reports -> Movies</h3>
 
         <h3><img src="images/releases.png" style="max-height: 35px;" />Movies</h3>
 
