@@ -2,7 +2,7 @@
 
   $nav_selected = "SCANNER"; 
   $left_buttons = "YES"; 
-  $left_selected = "RELEASES"; 
+  $left_selected = "REPORTS"; 
 
   include("./nav.php");
   global $db;
