@@ -29,7 +29,7 @@
         <ul>
             <a href="index.php">
               <li class="horozontal-li-logo" <?php if($nav_selected == "HOME"){ echo 'class="current-page"'; } ?>>
-              <img src ="./images/main_logo.png">
+              <img src ="./images/OMDB_logo.png">
               <br/>Online Movie Database</li>
             </a>
 
