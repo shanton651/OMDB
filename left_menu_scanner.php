@@ -8,7 +8,7 @@
   </a>
 
 
-  <a href="scanner_warnings.php">
+  <!-- <a href="scanner_warnings.php">
   	<div <?php if($left_selected == "WARNINGS")
   	{ echo 'class="menu-left-current-page"'; } ?>>
   	<img src="./images/warnings.png">
@@ -34,7 +34,7 @@
   	{ echo 'class="menu-left-current-page"'; } ?>>
   	<img src="./images/goofy.png">
   	<br/>Goofy<br/></div>
-  </a>
+  </a> -->
 
 
 </div>
