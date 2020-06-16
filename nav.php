@@ -39,10 +39,10 @@
                 <br/>Movies</li>
             </a>
 
-            <a href="timeline.php">
-              <li <?php if($nav_selected == "TIMELINE"){ echo 'class="current-page"'; } ?>>
-              <img src="./images/gantt.png">
-              <br/>Timeline</li>
+            <a href="people.php">
+              <li <?php if($nav_selected == "PEOPLE"){ echo 'class="current-page"'; } ?>>
+              <img src="./images/people.png">
+              <br/>People</li>
             </a>
 
             <a href="songs.php">
@@ -53,13 +53,8 @@
 
             <a href="reports.php">
               <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/icons8-medical-history-64.png">
+                <img src="./images/report1.png">
                 <br/>Reports</li>
-            </a>
-      <a href="peoples.php">
-              <li <?php if($nav_selected == "PEOPLES"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/peoples.png"/>">
-                <br/>Peoples</li>
             </a>
 
             <a href="puzzles.php">
@@ -67,8 +62,8 @@
                 <img src="./images/puzzle.png">
                 <br/>Puzzles</li>
             </a>
-<!-- 
-            <a href="trend.php">
+
+            <!-- <a href="trend.php">
               <li <?php if($nav_selected == "TREND"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/trend.png">
                 <br/>Trend</li>
@@ -114,12 +109,10 @@
                 include("./left_menu_timeline.php");
             } elseif ($nav_selected == "SONGS") {
                 include("./left_menu_songs.php");
-            } elseif ($nav_selected == "REPORTS") {
-                include("./left_menu_reports.php");
+            } elseif ($nav_selected == "SCANNER") {
+                include("./left_menu_scanner.php");
             } elseif ($nav_selected == "HISTORY") {
                 include("./left_menu_history.php");
-              } elseif ($nav_selected == "PEOPLES") {
-                include("./left_menu_peoples.php");
             } elseif ($nav_selected == "TREND") {
               include("./left_menu_trend.php");
            } elseif ($nav_selected == "SETUP") {
