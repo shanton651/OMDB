@@ -29,20 +29,20 @@
         <ul>
             <a href="index.php">
               <li class="horozontal-li-logo" <?php if($nav_selected == "HOME"){ echo 'class="current-page"'; } ?>>
-              <img src ="./images/main_logo.png">
+              <img src ="./images/OMDB_logo.png">
               <br/>Online Movie Database</li>
             </a>
 
-            <a href="list.php">
-              <li <?php if($nav_selected == "LIST"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/list.png">
-                <br/>List</li>
+            <a href="movieList.php">
+              <li <?php if($nav_selected == "MOVIES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/movies.png">
+                <br/>Movies</li>
             </a>
 
-            <a href="timeline.php">
-              <li <?php if($nav_selected == "TIMELINE"){ echo 'class="current-page"'; } ?>>
-              <img src="./images/gantt.png">
-              <br/>Timeline</li>
+            <a href="people.php">
+              <li <?php if($nav_selected == "PEOPLE"){ echo 'class="current-page"'; } ?>>
+              <img src="./images/people.png">
+              <br/>People</li>
             </a>
 
             <a href="songs.php">
@@ -51,19 +51,19 @@
               <br/>Songs</li>
             </a>
 
-            <a href="scanner.php">
-              <li <?php if($nav_selected == "SCANNER"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/scanner.png">
-                <br/>Scanner</li>
+            <a href="reports.php">
+              <li <?php if($nav_selected == "REPORTS"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/report1.png">
+                <br/>Reports</li>
             </a>
 
-            <a href="history.php">
-              <li <?php if($nav_selected == "HISTORY"){ echo 'class="current-page"'; } ?>>
-                <img src="./images/history.png">
-                <br/>History</li>
+            <a href="puzzles.php">
+              <li <?php if($nav_selected == "PUZZLES"){ echo 'class="current-page"'; } ?>>
+                <img src="./images/puzzle.png">
+                <br/>Puzzles</li>
             </a>
 
-            <a href="trend.php">
+            <!-- <a href="trend.php">
               <li <?php if($nav_selected == "TREND"){ echo 'class="current-page"'; } ?>>
                 <img src="./images/trend.png">
                 <br/>Trend</li>
@@ -80,7 +80,7 @@
           <li <?php if($nav_selected == "ABOUT"){ echo 'class="current-page"'; } ?>>
             <img src="./images/about.png">
             <br/>About</li>
-        </a>
+        </a> -->
 
         <a href="help.php">
           <li <?php if($nav_selected == "HELP"){ echo 'class="current-page"'; } ?>>

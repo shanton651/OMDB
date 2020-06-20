@@ -10,7 +10,7 @@
  <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Scanner --> Releases</h3>
+      <h3 style = "color: #01B0F1;">Reports --> Releases</h3>
 
     </div>
 </div>

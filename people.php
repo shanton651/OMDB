@@ -1,5 +1,5 @@
 <?php
-  $nav_selected = "TIMELINE";
+  $nav_selected = "PEOPLE";
   $left_buttons = "NO";
   $left_selected = "";
 
@@ -10,7 +10,7 @@
  <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Timeline (TO BE DONE LATER)</h3>
+      <h3 style = "color: #01B0F1;">PEOPLE (TO BE DONE LATER)</h3>
 
     </div>
 </div>
