@@ -1,8 +1,8 @@
 <?php
 
-  $nav_selected = "SCANNER"; 
+  $nav_selected = "MOVIES"; 
   $left_buttons = "YES"; 
-  $left_selected = "RELEASES"; 
+  $left_selected = "LIST"; 
 
   include("./nav.php");
   global $db;
@@ -13,24 +13,27 @@
 <div class="right-content">
     <div class="container">
 
-      <h3 style = "color: #01B0F1;">Scanner -> Movies</h3>
+      <h3 style = "color: #01B0F1;">Movies: List</h3>
 
-        <h3><img src="images/releases.png" style="max-height: 35px;" />Movies</h3>
+        </br>
 
         <table id="info" cellpadding="0" cellspacing="0" border="0"
             class="datatable table table-striped table-bordered datatable-style table-hover"
             width="100%" style="width: 100px;">
               <thead>
                 <tr id="table-first-row">
-                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Native Name</th>
                         <th>English Name</th>
                         <th>Year</th>
+                        <th>Info</th>
                 </tr>
               </thead>
 
               <tfoot>
                 <tr>
-                        <th>Name</th>
+                        <th>ID</th>
+                        <th>Native Name</th>
                         <th>English Name</th>
                         <th>Year</th>
                 </tr>
@@ -40,24 +43,18 @@
 
               <?php
 
-$sql = "SELECT * from Movies ORDER BY year ASC;";
+$sql = "SELECT * from movies ORDER BY year ASC;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
-                                <td>'.$row["name"].'</td>
-                                <td>'.$row["name"].' </span> </td>
-                                <td>'.$row["type"].'</td>
-                                <td>'.$row["status"].'</td>
-                                <td>'.$row["open_date"].' </span> </td>
-                                <td>'.$row["dependency_date"].'</td>
-                                <td>'.$row["freeze_date"].'</td>
-                                <td>'.$row["rtm_date"].' </span> </td>
-                                <td>'.$row["manager"].' </span> </td>
-                                <td>'.$row["author"].' </span> </td>
-                                <td>'.$row["app_id"].' </span> </td>
+                                <td>'.$row["movie_ID"].'</td>
+                                <td>'.$row["native_name"].'</td>
+                                <td>'.$row["english_name"].' </span> </td>
+                                <td>'.$row["year"].'</td>
+                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_ID"].'">Info</a></td>
                             </tr>';
                     }//end while
                 }//end if
