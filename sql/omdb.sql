@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jun 27, 2020 at 05:32 PM
+-- Generation Time: Jun 27, 2020 at 06:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.17
 
@@ -39,7 +39,7 @@ CREATE TABLE `movies` (
 --
 
 INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
-(1, 'local_name_1', 'english_name_1', 1962),
+(1, 'El secreto de sus ojos', 'the secret in their eyes', 2009), 
 (10, 'local_name_10', 'english_name_10', 1999),
 (100, 'local_name_100', 'english_name_100', 2013),
 (1000, 'local_name_1000', 'english_name_1000', 1974),
@@ -1038,13 +1038,7 @@ INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
 (996, 'local_name_996', 'english_name_996', 1981),
 (997, 'local_name_997', 'english_name_997', 1968),
 (998, 'local_name_998', 'english_name_998', 1953),
-(999, 'local_name_999', 'english_name_999', 1981),
-(0, 'Mala Educación', 'Bad Education', 2004),
-(0, 'Open Your Eyes', 'Open Your Eyes', 1997),
-(0, 'Rec', 'Rec', 2007),
-(0, 'Slumdog Millionaire', 'Slumdog Millionaire', 2008),
-(0, 'The Skin I Live In', 'The Skin I Live In', 2011),
-(0, 'Titanic', 'Titanic', 1997);
+(999, 'local_name_999', 'english_name_999', 1981);
 
 --
 -- Indexes for dumped tables

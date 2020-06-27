@@ -60,7 +60,7 @@
       if (isset($_GET['id'])) {
 
           $id = mysqli_real_escape_string($db, $_GET['id']);
-          $sql = "SELECT * FROM `movies` WHERE 'id' = " . $id;
+          $sql = "SELECT * FROM `movies` WHERE id = " . $id;
           $GLOBALS['row_data'] = mysqli_query($db, $sql);
       } 
       else if(isset($_GET['name'])) {
