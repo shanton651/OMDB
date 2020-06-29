@@ -4,7 +4,7 @@
   	<div <?php if($left_selected == "PLACEHOLDER")
   	{ echo 'class="menu-left-current-page"'; } ?>>
   	<img src="./images/releases.png">
-  	<p><br/>PLACEHOLDER<br/></div></p>
+  	<br/>Placeholder<br/></div>
   </a>
 
 </div>
