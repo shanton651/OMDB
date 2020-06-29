@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jun 26, 2020 at 03:22 AM
+-- Host: localhost
+-- Generation Time: Jun 27, 2020 at 06:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.17
 
@@ -28,17 +28,18 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `movies` (
-  `id` int(11) NOT NULL,
-  `name` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `english_name` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `year` year(4) NOT NULL
+  `id` int(10) NOT NULL,
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `english_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `movies`
 --
+
 INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
-(1, 'Open Your Eyes', 'Open Your Eyes', 1997),
+(1, 'El secreto de sus ojos', 'the secret in their eyes', 2009), 
 (10, 'local_name_10', 'english_name_10', 1999),
 (100, 'local_name_100', 'english_name_100', 2013),
 (1000, 'local_name_1000', 'english_name_1000', 1974),
@@ -1037,7 +1038,7 @@ INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
 (996, 'local_name_996', 'english_name_996', 1981),
 (997, 'local_name_997', 'english_name_997', 1968),
 (998, 'local_name_998', 'english_name_998', 1953),
-(999, 'local_name_999', 'english_name_999', 1981),
+(999, 'local_name_999', 'english_name_999', 1981);
 
 --
 -- Indexes for dumped tables
@@ -1047,17 +1048,7 @@ INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `movies`
---
-ALTER TABLE `movies`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1001;
+  ADD PRIMARY KEY (`name`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

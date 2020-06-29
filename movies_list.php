@@ -50,11 +50,11 @@ $result = $db->query($sql);
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
-                                <td>'.$row["movie_ID"].'</td>
-                                <td>'.$row["native_name"].'</td>
+                                <td>'.$row["id"].'</td>
+                                <td>'.$row["name"].'</td>
                                 <td>'.$row["english_name"].' </span> </td>
                                 <td>'.$row["year"].'</td>
-                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_ID"].'">Info</a></td>
+                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["id"].'">Info</a></td>
                             </tr>';
                     }//end while
                 }//end if
