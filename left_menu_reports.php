@@ -4,7 +4,7 @@
   	<div <?php if($left_selected == "SUMMARY")
   	{ echo 'class="menu-left-current-page"'; } ?>>
   	<img src="./images/releases.png">
-  	<<p><br/>MOVIES/YEAR SUMMARY<br/></div></p>
+  	<br/>Movie/Year Summary<br/></div>
   </a>
 
 </div>
