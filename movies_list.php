@@ -43,18 +43,18 @@
 
               <?php
 
-$sql = "SELECT * from movies ORDER BY year ASC;";
+$sql = "SELECT * from `movies` ORDER BY year_made ASC;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
-                                <td>'.$row["movie_ID"].'</td>
+                                <td>'.$row["movie_id"].'</td>
                                 <td>'.$row["native_name"].'</td>
                                 <td>'.$row["english_name"].' </span> </td>
-                                <td>'.$row["year"].'</td>
-                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_ID"].'">Info</a></td>
+                                <td>'.$row["year_made"].'</td>
+                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_id"].'">Info</a></td>
                             </tr>';
                     }//end while
                 }//end if
