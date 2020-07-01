@@ -2,8 +2,8 @@
 -- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Jul 01, 2020 at 02:41 AM
+-- Host: localhost
+-- Generation Time: Jun 27, 2020 at 06:38 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.17
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `omdb`
 --
-CREATE DATABASE IF NOT EXISTS `omdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `omdb`;
 
 -- --------------------------------------------------------
 
@@ -30,117 +28,21 @@ USE `omdb`;
 --
 
 CREATE TABLE `movies` (
-  `movie_id` int(6) NOT NULL,
-  `native_name` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `english_name` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `year_made` year(4) NOT NULL
+  `id` int(10) NOT NULL,
+  `name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `english_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `year` int(4) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `movies`
 --
 
-INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VALUES
-(1, 'Forrest Gump', 'Forrest Gump', 1994),
-(2, 'local_name_2', 'english_name_2', 1955),
-(3, 'local_name_3', 'english_name_3', 1999),
-(4, 'local_name_4', 'english_name_4', 1998),
-(5, 'local_name_5', 'english_name_5', 2013),
-(6, 'local_name_6', 'english_name_6', 1980),
-(7, 'local_name_7', 'english_name_7', 1999),
-(8, 'local_name_8', 'english_name_8', 1976),
-(9, 'local_name_9', 'english_name_9', 1977),
+INSERT INTO `movies` (`id`, `name`, `english_name`, `year`) VALUES
+(1, 'El secreto de sus ojos', 'the secret in their eyes', 2009), 
 (10, 'local_name_10', 'english_name_10', 1999),
-(11, 'local_name_11', 'english_name_11', 2003),
-(12, 'local_name_12', 'english_name_12', 1995),
-(13, 'local_name_13', 'english_name_13', 1986),
-(14, 'local_name_14', 'english_name_14', 2008),
-(15, 'local_name_15', 'english_name_15', 1973),
-(16, 'local_name_16', 'english_name_16', 2014),
-(17, 'local_name_17', 'english_name_17', 2020),
-(18, 'local_name_18', 'english_name_18', 1995),
-(19, 'local_name_19', 'english_name_19', 1961),
-(20, 'local_name_20', 'english_name_20', 2012),
-(21, 'local_name_21', 'english_name_21', 2008),
-(22, 'local_name_22', 'english_name_22', 1967),
-(23, 'local_name_23', 'english_name_23', 1950),
-(24, 'local_name_24', 'english_name_24', 1963),
-(25, 'local_name_25', 'english_name_25', 2004),
-(26, 'local_name_26', 'english_name_26', 1987),
-(27, 'local_name_27', 'english_name_27', 1965),
-(28, 'local_name_28', 'english_name_28', 2010),
-(29, 'local_name_29', 'english_name_29', 1965),
-(30, 'local_name_30', 'english_name_30', 1992),
-(31, 'local_name_31', 'english_name_31', 1974),
-(32, 'local_name_32', 'english_name_32', 1958),
-(33, 'local_name_33', 'english_name_33', 2004),
-(34, 'local_name_34', 'english_name_34', 1999),
-(35, 'local_name_35', 'english_name_35', 1991),
-(36, 'local_name_36', 'english_name_36', 1995),
-(37, 'local_name_37', 'english_name_37', 2007),
-(38, 'local_name_38', 'english_name_38', 2001),
-(39, 'local_name_39', 'english_name_39', 1995),
-(40, 'local_name_40', 'english_name_40', 1982),
-(41, 'local_name_41', 'english_name_41', 1988),
-(42, 'local_name_42', 'english_name_42', 1961),
-(43, 'local_name_43', 'english_name_43', 1997),
-(44, 'local_name_44', 'english_name_44', 1950),
-(45, 'local_name_45', 'english_name_45', 1998),
-(46, 'local_name_46', 'english_name_46', 1999),
-(47, 'local_name_47', 'english_name_47', 1954),
-(48, 'local_name_48', 'english_name_48', 1991),
-(49, 'local_name_49', 'english_name_49', 1968),
-(50, 'local_name_50', 'english_name_50', 1967),
-(51, 'local_name_51', 'english_name_51', 1995),
-(52, 'local_name_52', 'english_name_52', 1984),
-(53, 'local_name_53', 'english_name_53', 1982),
-(54, 'local_name_54', 'english_name_54', 1987),
-(55, 'local_name_55', 'english_name_55', 1978),
-(56, 'local_name_56', 'english_name_56', 1963),
-(57, 'local_name_57', 'english_name_57', 1957),
-(58, 'local_name_58', 'english_name_58', 1971),
-(59, 'local_name_59', 'english_name_59', 1975),
-(60, 'local_name_60', 'english_name_60', 1962),
-(61, 'local_name_61', 'english_name_61', 2000),
-(62, 'local_name_62', 'english_name_62', 2010),
-(63, 'local_name_63', 'english_name_63', 1992),
-(64, 'local_name_64', 'english_name_64', 1977),
-(65, 'local_name_65', 'english_name_65', 2014),
-(66, 'local_name_66', 'english_name_66', 1980),
-(67, 'local_name_67', 'english_name_67', 1971),
-(68, 'local_name_68', 'english_name_68', 1978),
-(69, 'local_name_69', 'english_name_69', 1977),
-(70, 'local_name_70', 'english_name_70', 1998),
-(71, 'local_name_71', 'english_name_71', 1973),
-(72, 'local_name_72', 'english_name_72', 1973),
-(73, 'local_name_73', 'english_name_73', 1981),
-(74, 'local_name_74', 'english_name_74', 2016),
-(75, 'local_name_75', 'english_name_75', 2008),
-(76, 'local_name_76', 'english_name_76', 1956),
-(77, 'local_name_77', 'english_name_77', 2003),
-(78, 'local_name_78', 'english_name_78', 1990),
-(79, 'local_name_79', 'english_name_79', 1960),
-(80, 'local_name_80', 'english_name_80', 1956),
-(81, 'local_name_81', 'english_name_81', 1983),
-(82, 'local_name_82', 'english_name_82', 2001),
-(83, 'local_name_83', 'english_name_83', 1963),
-(84, 'local_name_84', 'english_name_84', 2008),
-(85, 'local_name_85', 'english_name_85', 1988),
-(86, 'local_name_86', 'english_name_86', 1987),
-(87, 'local_name_87', 'english_name_87', 1996),
-(88, 'local_name_88', 'english_name_88', 1987),
-(89, 'local_name_89', 'english_name_89', 2011),
-(90, 'local_name_90', 'english_name_90', 1978),
-(91, 'local_name_91', 'english_name_91', 1984),
-(92, 'local_name_92', 'english_name_92', 1989),
-(93, 'local_name_93', 'english_name_93', 1969),
-(94, 'local_name_94', 'english_name_94', 2014),
-(95, 'local_name_95', 'english_name_95', 1951),
-(96, 'local_name_96', 'english_name_96', 2005),
-(97, 'local_name_97', 'english_name_97', 1986),
-(98, 'local_name_98', 'english_name_98', 2009),
-(99, 'local_name_99', 'english_name_99', 2006),
 (100, 'local_name_100', 'english_name_100', 2013),
+(1000, 'local_name_1000', 'english_name_1000', 1974),
 (101, 'local_name_101', 'english_name_101', 2020),
 (102, 'local_name_102', 'english_name_102', 1981),
 (103, 'local_name_103', 'english_name_103', 2011),
@@ -150,6 +52,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (107, 'local_name_107', 'english_name_107', 1978),
 (108, 'local_name_108', 'english_name_108', 1971),
 (109, 'local_name_109', 'english_name_109', 1983),
+(11, 'local_name_11', 'english_name_11', 2003),
 (110, 'local_name_110', 'english_name_110', 1951),
 (111, 'local_name_111', 'english_name_111', 1992),
 (112, 'local_name_112', 'english_name_112', 1959),
@@ -160,6 +63,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (117, 'local_name_117', 'english_name_117', 1960),
 (118, 'local_name_118', 'english_name_118', 2002),
 (119, 'local_name_119', 'english_name_119', 1968),
+(12, 'local_name_12', 'english_name_12', 1995),
 (120, 'local_name_120', 'english_name_120', 2013),
 (121, 'local_name_121', 'english_name_121', 2008),
 (122, 'local_name_122', 'english_name_122', 2012),
@@ -170,6 +74,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (127, 'local_name_127', 'english_name_127', 1959),
 (128, 'local_name_128', 'english_name_128', 1976),
 (129, 'local_name_129', 'english_name_129', 1986),
+(13, 'local_name_13', 'english_name_13', 1986),
 (130, 'local_name_130', 'english_name_130', 1993),
 (131, 'local_name_131', 'english_name_131', 1961),
 (132, 'local_name_132', 'english_name_132', 1962),
@@ -180,6 +85,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (137, 'local_name_137', 'english_name_137', 1990),
 (138, 'local_name_138', 'english_name_138', 1983),
 (139, 'local_name_139', 'english_name_139', 2003),
+(14, 'local_name_14', 'english_name_14', 2008),
 (140, 'local_name_140', 'english_name_140', 2019),
 (141, 'local_name_141', 'english_name_141', 2002),
 (142, 'local_name_142', 'english_name_142', 1993),
@@ -190,6 +96,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (147, 'local_name_147', 'english_name_147', 2014),
 (148, 'local_name_148', 'english_name_148', 2001),
 (149, 'local_name_149', 'english_name_149', 1961),
+(15, 'local_name_15', 'english_name_15', 1973),
 (150, 'local_name_150', 'english_name_150', 2013),
 (151, 'local_name_151', 'english_name_151', 1989),
 (152, 'local_name_152', 'english_name_152', 1986),
@@ -200,6 +107,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (157, 'local_name_157', 'english_name_157', 1976),
 (158, 'local_name_158', 'english_name_158', 1960),
 (159, 'local_name_159', 'english_name_159', 1951),
+(16, 'local_name_16', 'english_name_16', 2014),
 (160, 'local_name_160', 'english_name_160', 1993),
 (161, 'local_name_161', 'english_name_161', 1989),
 (162, 'local_name_162', 'english_name_162', 1989),
@@ -210,6 +118,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (167, 'local_name_167', 'english_name_167', 1984),
 (168, 'local_name_168', 'english_name_168', 1953),
 (169, 'local_name_169', 'english_name_169', 1979),
+(17, 'local_name_17', 'english_name_17', 2020),
 (170, 'local_name_170', 'english_name_170', 2010),
 (171, 'local_name_171', 'english_name_171', 1999),
 (172, 'local_name_172', 'english_name_172', 1962),
@@ -220,6 +129,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (177, 'local_name_177', 'english_name_177', 1970),
 (178, 'local_name_178', 'english_name_178', 1990),
 (179, 'local_name_179', 'english_name_179', 1992),
+(18, 'local_name_18', 'english_name_18', 1995),
 (180, 'local_name_180', 'english_name_180', 1972),
 (181, 'local_name_181', 'english_name_181', 1997),
 (182, 'local_name_182', 'english_name_182', 1968),
@@ -230,6 +140,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (187, 'local_name_187', 'english_name_187', 1977),
 (188, 'local_name_188', 'english_name_188', 1986),
 (189, 'local_name_189', 'english_name_189', 1997),
+(19, 'local_name_19', 'english_name_19', 1961),
 (190, 'local_name_190', 'english_name_190', 1971),
 (191, 'local_name_191', 'english_name_191', 1973),
 (192, 'local_name_192', 'english_name_192', 1984),
@@ -240,6 +151,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (197, 'local_name_197', 'english_name_197', 1994),
 (198, 'local_name_198', 'english_name_198', 1975),
 (199, 'local_name_199', 'english_name_199', 2010),
+(2, 'local_name_2', 'english_name_2', 1955),
+(20, 'local_name_20', 'english_name_20', 2012),
 (200, 'local_name_200', 'english_name_200', 1953),
 (201, 'local_name_201', 'english_name_201', 2013),
 (202, 'local_name_202', 'english_name_202', 1974),
@@ -250,6 +163,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (207, 'local_name_207', 'english_name_207', 2000),
 (208, 'local_name_208', 'english_name_208', 1963),
 (209, 'local_name_209', 'english_name_209', 2019),
+(21, 'local_name_21', 'english_name_21', 2008),
 (210, 'local_name_210', 'english_name_210', 1976),
 (211, 'local_name_211', 'english_name_211', 2002),
 (212, 'local_name_212', 'english_name_212', 1986),
@@ -260,6 +174,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (217, 'local_name_217', 'english_name_217', 1988),
 (218, 'local_name_218', 'english_name_218', 1978),
 (219, 'local_name_219', 'english_name_219', 2007),
+(22, 'local_name_22', 'english_name_22', 1967),
 (220, 'local_name_220', 'english_name_220', 2006),
 (221, 'local_name_221', 'english_name_221', 1979),
 (222, 'local_name_222', 'english_name_222', 1977),
@@ -270,6 +185,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (227, 'local_name_227', 'english_name_227', 1964),
 (228, 'local_name_228', 'english_name_228', 1963),
 (229, 'local_name_229', 'english_name_229', 1967),
+(23, 'local_name_23', 'english_name_23', 1950),
 (230, 'local_name_230', 'english_name_230', 1957),
 (231, 'local_name_231', 'english_name_231', 1995),
 (232, 'local_name_232', 'english_name_232', 2000),
@@ -280,6 +196,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (237, 'local_name_237', 'english_name_237', 1966),
 (238, 'local_name_238', 'english_name_238', 1971),
 (239, 'local_name_239', 'english_name_239', 2015),
+(24, 'local_name_24', 'english_name_24', 1963),
 (240, 'local_name_240', 'english_name_240', 1957),
 (241, 'local_name_241', 'english_name_241', 1974),
 (242, 'local_name_242', 'english_name_242', 1998),
@@ -290,6 +207,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (247, 'local_name_247', 'english_name_247', 2016),
 (248, 'local_name_248', 'english_name_248', 1980),
 (249, 'local_name_249', 'english_name_249', 1999),
+(25, 'local_name_25', 'english_name_25', 2004),
 (250, 'local_name_250', 'english_name_250', 1999),
 (251, 'local_name_251', 'english_name_251', 2013),
 (252, 'local_name_252', 'english_name_252', 1974),
@@ -300,6 +218,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (257, 'local_name_257', 'english_name_257', 2002),
 (258, 'local_name_258', 'english_name_258', 2018),
 (259, 'local_name_259', 'english_name_259', 1982),
+(26, 'local_name_26', 'english_name_26', 1987),
 (260, 'local_name_260', 'english_name_260', 1998),
 (261, 'local_name_261', 'english_name_261', 2004),
 (262, 'local_name_262', 'english_name_262', 1958),
@@ -310,6 +229,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (267, 'local_name_267', 'english_name_267', 1962),
 (268, 'local_name_268', 'english_name_268', 1964),
 (269, 'local_name_269', 'english_name_269', 2008),
+(27, 'local_name_27', 'english_name_27', 1965),
 (270, 'local_name_270', 'english_name_270', 1987),
 (271, 'local_name_271', 'english_name_271', 1959),
 (272, 'local_name_272', 'english_name_272', 1969),
@@ -320,6 +240,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (277, 'local_name_277', 'english_name_277', 2006),
 (278, 'local_name_278', 'english_name_278', 1953),
 (279, 'local_name_279', 'english_name_279', 2020),
+(28, 'local_name_28', 'english_name_28', 2010),
 (280, 'local_name_280', 'english_name_280', 1997),
 (281, 'local_name_281', 'english_name_281', 1950),
 (282, 'local_name_282', 'english_name_282', 1955),
@@ -330,6 +251,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (287, 'local_name_287', 'english_name_287', 1963),
 (288, 'local_name_288', 'english_name_288', 2005),
 (289, 'local_name_289', 'english_name_289', 2007),
+(29, 'local_name_29', 'english_name_29', 1965),
 (290, 'local_name_290', 'english_name_290', 1988),
 (291, 'local_name_291', 'english_name_291', 2011),
 (292, 'local_name_292', 'english_name_292', 1990),
@@ -340,6 +262,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (297, 'local_name_297', 'english_name_297', 1990),
 (298, 'local_name_298', 'english_name_298', 2008),
 (299, 'local_name_299', 'english_name_299', 2017),
+(3, 'local_name_3', 'english_name_3', 1999),
+(30, 'local_name_30', 'english_name_30', 1992),
 (300, 'local_name_300', 'english_name_300', 1958),
 (301, 'local_name_301', 'english_name_301', 1973),
 (302, 'local_name_302', 'english_name_302', 1991),
@@ -350,6 +274,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (307, 'local_name_307', 'english_name_307', 1979),
 (308, 'local_name_308', 'english_name_308', 1962),
 (309, 'local_name_309', 'english_name_309', 1993),
+(31, 'local_name_31', 'english_name_31', 1974),
 (310, 'local_name_310', 'english_name_310', 1989),
 (311, 'local_name_311', 'english_name_311', 1997),
 (312, 'local_name_312', 'english_name_312', 1960),
@@ -360,6 +285,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (317, 'local_name_317', 'english_name_317', 1993),
 (318, 'local_name_318', 'english_name_318', 1976),
 (319, 'local_name_319', 'english_name_319', 1951),
+(32, 'local_name_32', 'english_name_32', 1958),
 (320, 'local_name_320', 'english_name_320', 1958),
 (321, 'local_name_321', 'english_name_321', 1990),
 (322, 'local_name_322', 'english_name_322', 1978),
@@ -370,6 +296,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (327, 'local_name_327', 'english_name_327', 2017),
 (328, 'local_name_328', 'english_name_328', 2019),
 (329, 'local_name_329', 'english_name_329', 1990),
+(33, 'local_name_33', 'english_name_33', 2004),
 (330, 'local_name_330', 'english_name_330', 1956),
 (331, 'local_name_331', 'english_name_331', 1982),
 (332, 'local_name_332', 'english_name_332', 1976),
@@ -380,6 +307,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (337, 'local_name_337', 'english_name_337', 1999),
 (338, 'local_name_338', 'english_name_338', 1977),
 (339, 'local_name_339', 'english_name_339', 1994),
+(34, 'local_name_34', 'english_name_34', 1999),
 (340, 'local_name_340', 'english_name_340', 2019),
 (341, 'local_name_341', 'english_name_341', 1975),
 (342, 'local_name_342', 'english_name_342', 1974),
@@ -390,6 +318,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (347, 'local_name_347', 'english_name_347', 2017),
 (348, 'local_name_348', 'english_name_348', 1971),
 (349, 'local_name_349', 'english_name_349', 1987),
+(35, 'local_name_35', 'english_name_35', 1991),
 (350, 'local_name_350', 'english_name_350', 2019),
 (351, 'local_name_351', 'english_name_351', 1993),
 (352, 'local_name_352', 'english_name_352', 1960),
@@ -400,6 +329,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (357, 'local_name_357', 'english_name_357', 1981),
 (358, 'local_name_358', 'english_name_358', 1980),
 (359, 'local_name_359', 'english_name_359', 2005),
+(36, 'local_name_36', 'english_name_36', 1995),
 (360, 'local_name_360', 'english_name_360', 1978),
 (361, 'local_name_361', 'english_name_361', 1972),
 (362, 'local_name_362', 'english_name_362', 2014),
@@ -410,6 +340,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (367, 'local_name_367', 'english_name_367', 2017),
 (368, 'local_name_368', 'english_name_368', 1991),
 (369, 'local_name_369', 'english_name_369', 1952),
+(37, 'local_name_37', 'english_name_37', 2007),
 (370, 'local_name_370', 'english_name_370', 1968),
 (371, 'local_name_371', 'english_name_371', 1972),
 (372, 'local_name_372', 'english_name_372', 1985),
@@ -420,6 +351,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (377, 'local_name_377', 'english_name_377', 1986),
 (378, 'local_name_378', 'english_name_378', 1960),
 (379, 'local_name_379', 'english_name_379', 1961),
+(38, 'local_name_38', 'english_name_38', 2001),
 (380, 'local_name_380', 'english_name_380', 1999),
 (381, 'local_name_381', 'english_name_381', 1992),
 (382, 'local_name_382', 'english_name_382', 1952),
@@ -430,6 +362,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (387, 'local_name_387', 'english_name_387', 1969),
 (388, 'local_name_388', 'english_name_388', 1999),
 (389, 'local_name_389', 'english_name_389', 1950),
+(39, 'local_name_39', 'english_name_39', 1995),
 (390, 'local_name_390', 'english_name_390', 1985),
 (391, 'local_name_391', 'english_name_391', 1991),
 (392, 'local_name_392', 'english_name_392', 1998),
@@ -440,6 +373,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (397, 'local_name_397', 'english_name_397', 1957),
 (398, 'local_name_398', 'english_name_398', 1962),
 (399, 'local_name_399', 'english_name_399', 1960),
+(4, 'local_name_4', 'english_name_4', 1998),
+(40, 'local_name_40', 'english_name_40', 1982),
 (400, 'local_name_400', 'english_name_400', 1958),
 (401, 'local_name_401', 'english_name_401', 1964),
 (402, 'local_name_402', 'english_name_402', 1999),
@@ -450,6 +385,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (407, 'local_name_407', 'english_name_407', 1963),
 (408, 'local_name_408', 'english_name_408', 1971),
 (409, 'local_name_409', 'english_name_409', 2001),
+(41, 'local_name_41', 'english_name_41', 1988),
 (410, 'local_name_410', 'english_name_410', 1959),
 (411, 'local_name_411', 'english_name_411', 2010),
 (412, 'local_name_412', 'english_name_412', 1975),
@@ -460,6 +396,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (417, 'local_name_417', 'english_name_417', 1990),
 (418, 'local_name_418', 'english_name_418', 1970),
 (419, 'local_name_419', 'english_name_419', 1976),
+(42, 'local_name_42', 'english_name_42', 1961),
 (420, 'local_name_420', 'english_name_420', 2017),
 (421, 'local_name_421', 'english_name_421', 1977),
 (422, 'local_name_422', 'english_name_422', 1960),
@@ -470,6 +407,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (427, 'local_name_427', 'english_name_427', 1954),
 (428, 'local_name_428', 'english_name_428', 1985),
 (429, 'local_name_429', 'english_name_429', 1974),
+(43, 'local_name_43', 'english_name_43', 1997),
 (430, 'local_name_430', 'english_name_430', 1971),
 (431, 'local_name_431', 'english_name_431', 1976),
 (432, 'local_name_432', 'english_name_432', 1983),
@@ -480,6 +418,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (437, 'local_name_437', 'english_name_437', 1986),
 (438, 'local_name_438', 'english_name_438', 1952),
 (439, 'local_name_439', 'english_name_439', 1958),
+(44, 'local_name_44', 'english_name_44', 1950),
 (440, 'local_name_440', 'english_name_440', 1955),
 (441, 'local_name_441', 'english_name_441', 1972),
 (442, 'local_name_442', 'english_name_442', 1964),
@@ -490,6 +429,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (447, 'local_name_447', 'english_name_447', 1952),
 (448, 'local_name_448', 'english_name_448', 1975),
 (449, 'local_name_449', 'english_name_449', 2002),
+(45, 'local_name_45', 'english_name_45', 1998),
 (450, 'local_name_450', 'english_name_450', 1977),
 (451, 'local_name_451', 'english_name_451', 2000),
 (452, 'local_name_452', 'english_name_452', 1987),
@@ -500,6 +440,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (457, 'local_name_457', 'english_name_457', 1997),
 (458, 'local_name_458', 'english_name_458', 1971),
 (459, 'local_name_459', 'english_name_459', 1954),
+(46, 'local_name_46', 'english_name_46', 1999),
 (460, 'local_name_460', 'english_name_460', 1971),
 (461, 'local_name_461', 'english_name_461', 2006),
 (462, 'local_name_462', 'english_name_462', 1980),
@@ -510,6 +451,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (467, 'local_name_467', 'english_name_467', 2001),
 (468, 'local_name_468', 'english_name_468', 1971),
 (469, 'local_name_469', 'english_name_469', 2004),
+(47, 'local_name_47', 'english_name_47', 1954),
 (470, 'local_name_470', 'english_name_470', 1989),
 (471, 'local_name_471', 'english_name_471', 1972),
 (472, 'local_name_472', 'english_name_472', 2009),
@@ -520,6 +462,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (477, 'local_name_477', 'english_name_477', 2017),
 (478, 'local_name_478', 'english_name_478', 2015),
 (479, 'local_name_479', 'english_name_479', 2019),
+(48, 'local_name_48', 'english_name_48', 1991),
 (480, 'local_name_480', 'english_name_480', 1985),
 (481, 'local_name_481', 'english_name_481', 1970),
 (482, 'local_name_482', 'english_name_482', 1987),
@@ -530,6 +473,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (487, 'local_name_487', 'english_name_487', 1977),
 (488, 'local_name_488', 'english_name_488', 1995),
 (489, 'local_name_489', 'english_name_489', 1976),
+(49, 'local_name_49', 'english_name_49', 1968),
 (490, 'local_name_490', 'english_name_490', 2014),
 (491, 'local_name_491', 'english_name_491', 2020),
 (492, 'local_name_492', 'english_name_492', 1987),
@@ -540,6 +484,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (497, 'local_name_497', 'english_name_497', 1993),
 (498, 'local_name_498', 'english_name_498', 2000),
 (499, 'local_name_499', 'english_name_499', 1987),
+(5, 'local_name_5', 'english_name_5', 2013),
+(50, 'local_name_50', 'english_name_50', 1967),
 (500, 'local_name_500', 'english_name_500', 1973),
 (501, 'local_name_501', 'english_name_501', 1955),
 (502, 'local_name_502', 'english_name_502', 1999),
@@ -550,6 +496,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (507, 'local_name_507', 'english_name_507', 1973),
 (508, 'local_name_508', 'english_name_508', 1980),
 (509, 'local_name_509', 'english_name_509', 1987),
+(51, 'local_name_51', 'english_name_51', 1995),
 (510, 'local_name_510', 'english_name_510', 1984),
 (511, 'local_name_511', 'english_name_511', 2011),
 (512, 'local_name_512', 'english_name_512', 1992),
@@ -560,6 +507,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (517, 'local_name_517', 'english_name_517', 1996),
 (518, 'local_name_518', 'english_name_518', 2012),
 (519, 'local_name_519', 'english_name_519', 1961),
+(52, 'local_name_52', 'english_name_52', 1984),
 (520, 'local_name_520', 'english_name_520', 2020),
 (521, 'local_name_521', 'english_name_521', 1985),
 (522, 'local_name_522', 'english_name_522', 1991),
@@ -570,6 +518,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (527, 'local_name_527', 'english_name_527', 1991),
 (528, 'local_name_528', 'english_name_528', 1994),
 (529, 'local_name_529', 'english_name_529', 1986),
+(53, 'local_name_53', 'english_name_53', 1982),
 (530, 'local_name_530', 'english_name_530', 2003),
 (531, 'local_name_531', 'english_name_531', 1970),
 (532, 'local_name_532', 'english_name_532', 1973),
@@ -580,6 +529,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (537, 'local_name_537', 'english_name_537', 1973),
 (538, 'local_name_538', 'english_name_538', 1956),
 (539, 'local_name_539', 'english_name_539', 2003),
+(54, 'local_name_54', 'english_name_54', 1987),
 (540, 'local_name_540', 'english_name_540', 2012),
 (541, 'local_name_541', 'english_name_541', 1996),
 (542, 'local_name_542', 'english_name_542', 1961),
@@ -590,6 +540,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (547, 'local_name_547', 'english_name_547', 2015),
 (548, 'local_name_548', 'english_name_548', 1952),
 (549, 'local_name_549', 'english_name_549', 1950),
+(55, 'local_name_55', 'english_name_55', 1978),
 (550, 'local_name_550', 'english_name_550', 2002),
 (551, 'local_name_551', 'english_name_551', 2012),
 (552, 'local_name_552', 'english_name_552', 1989),
@@ -600,6 +551,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (557, 'local_name_557', 'english_name_557', 2007),
 (558, 'local_name_558', 'english_name_558', 1973),
 (559, 'local_name_559', 'english_name_559', 1956),
+(56, 'local_name_56', 'english_name_56', 1963),
 (560, 'local_name_560', 'english_name_560', 1979),
 (561, 'local_name_561', 'english_name_561', 1958),
 (562, 'local_name_562', 'english_name_562', 1965),
@@ -610,6 +562,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (567, 'local_name_567', 'english_name_567', 1997),
 (568, 'local_name_568', 'english_name_568', 1950),
 (569, 'local_name_569', 'english_name_569', 1953),
+(57, 'local_name_57', 'english_name_57', 1957),
 (570, 'local_name_570', 'english_name_570', 2002),
 (571, 'local_name_571', 'english_name_571', 1967),
 (572, 'local_name_572', 'english_name_572', 1950),
@@ -620,6 +573,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (577, 'local_name_577', 'english_name_577', 2017),
 (578, 'local_name_578', 'english_name_578', 2002),
 (579, 'local_name_579', 'english_name_579', 2013),
+(58, 'local_name_58', 'english_name_58', 1971),
 (580, 'local_name_580', 'english_name_580', 1983),
 (581, 'local_name_581', 'english_name_581', 2016),
 (582, 'local_name_582', 'english_name_582', 1996),
@@ -630,6 +584,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (587, 'local_name_587', 'english_name_587', 1973),
 (588, 'local_name_588', 'english_name_588', 2015),
 (589, 'local_name_589', 'english_name_589', 1985),
+(59, 'local_name_59', 'english_name_59', 1975),
 (590, 'local_name_590', 'english_name_590', 1996),
 (591, 'local_name_591', 'english_name_591', 1950),
 (592, 'local_name_592', 'english_name_592', 1983),
@@ -640,6 +595,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (597, 'local_name_597', 'english_name_597', 1968),
 (598, 'local_name_598', 'english_name_598', 1973),
 (599, 'local_name_599', 'english_name_599', 2012),
+(6, 'local_name_6', 'english_name_6', 1980),
+(60, 'local_name_60', 'english_name_60', 1962),
 (600, 'local_name_600', 'english_name_600', 1997),
 (601, 'local_name_601', 'english_name_601', 1987),
 (602, 'local_name_602', 'english_name_602', 1980),
@@ -650,6 +607,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (607, 'local_name_607', 'english_name_607', 1977),
 (608, 'local_name_608', 'english_name_608', 1987),
 (609, 'local_name_609', 'english_name_609', 1990),
+(61, 'local_name_61', 'english_name_61', 2000),
 (610, 'local_name_610', 'english_name_610', 1975),
 (611, 'local_name_611', 'english_name_611', 1975),
 (612, 'local_name_612', 'english_name_612', 1977),
@@ -660,6 +618,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (617, 'local_name_617', 'english_name_617', 1981),
 (618, 'local_name_618', 'english_name_618', 1979),
 (619, 'local_name_619', 'english_name_619', 2004),
+(62, 'local_name_62', 'english_name_62', 2010),
 (620, 'local_name_620', 'english_name_620', 2014),
 (621, 'local_name_621', 'english_name_621', 1993),
 (622, 'local_name_622', 'english_name_622', 1964),
@@ -670,6 +629,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (627, 'local_name_627', 'english_name_627', 1955),
 (628, 'local_name_628', 'english_name_628', 2018),
 (629, 'local_name_629', 'english_name_629', 1983),
+(63, 'local_name_63', 'english_name_63', 1992),
 (630, 'local_name_630', 'english_name_630', 1961),
 (631, 'local_name_631', 'english_name_631', 1964),
 (632, 'local_name_632', 'english_name_632', 1988),
@@ -680,6 +640,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (637, 'local_name_637', 'english_name_637', 2014),
 (638, 'local_name_638', 'english_name_638', 1995),
 (639, 'local_name_639', 'english_name_639', 2001),
+(64, 'local_name_64', 'english_name_64', 1977),
 (640, 'local_name_640', 'english_name_640', 2020),
 (641, 'local_name_641', 'english_name_641', 1967),
 (642, 'local_name_642', 'english_name_642', 1994),
@@ -690,6 +651,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (647, 'local_name_647', 'english_name_647', 1991),
 (648, 'local_name_648', 'english_name_648', 1996),
 (649, 'local_name_649', 'english_name_649', 2008),
+(65, 'local_name_65', 'english_name_65', 2014),
 (650, 'local_name_650', 'english_name_650', 2018),
 (651, 'local_name_651', 'english_name_651', 1975),
 (652, 'local_name_652', 'english_name_652', 1968),
@@ -700,6 +662,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (657, 'local_name_657', 'english_name_657', 1954),
 (658, 'local_name_658', 'english_name_658', 1996),
 (659, 'local_name_659', 'english_name_659', 1950),
+(66, 'local_name_66', 'english_name_66', 1980),
 (660, 'local_name_660', 'english_name_660', 1988),
 (661, 'local_name_661', 'english_name_661', 1950),
 (662, 'local_name_662', 'english_name_662', 1977),
@@ -710,6 +673,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (667, 'local_name_667', 'english_name_667', 1951),
 (668, 'local_name_668', 'english_name_668', 1972),
 (669, 'local_name_669', 'english_name_669', 2010),
+(67, 'local_name_67', 'english_name_67', 1971),
 (670, 'local_name_670', 'english_name_670', 1979),
 (671, 'local_name_671', 'english_name_671', 1960),
 (672, 'local_name_672', 'english_name_672', 1982),
@@ -720,6 +684,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (677, 'local_name_677', 'english_name_677', 1965),
 (678, 'local_name_678', 'english_name_678', 1971),
 (679, 'local_name_679', 'english_name_679', 1987),
+(68, 'local_name_68', 'english_name_68', 1978),
 (680, 'local_name_680', 'english_name_680', 2004),
 (681, 'local_name_681', 'english_name_681', 1970),
 (682, 'local_name_682', 'english_name_682', 1955),
@@ -730,6 +695,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (687, 'local_name_687', 'english_name_687', 1956),
 (688, 'local_name_688', 'english_name_688', 2004),
 (689, 'local_name_689', 'english_name_689', 1950),
+(69, 'local_name_69', 'english_name_69', 1977),
 (690, 'local_name_690', 'english_name_690', 1953),
 (691, 'local_name_691', 'english_name_691', 2007),
 (692, 'local_name_692', 'english_name_692', 1962),
@@ -740,6 +706,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (697, 'local_name_697', 'english_name_697', 1973),
 (698, 'local_name_698', 'english_name_698', 1967),
 (699, 'local_name_699', 'english_name_699', 1995),
+(7, 'local_name_7', 'english_name_7', 1999),
+(70, 'local_name_70', 'english_name_70', 1998),
 (700, 'local_name_700', 'english_name_700', 1999),
 (701, 'local_name_701', 'english_name_701', 1958),
 (702, 'local_name_702', 'english_name_702', 1972),
@@ -750,6 +718,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (707, 'local_name_707', 'english_name_707', 2000),
 (708, 'local_name_708', 'english_name_708', 1999),
 (709, 'local_name_709', 'english_name_709', 1998),
+(71, 'local_name_71', 'english_name_71', 1973),
 (710, 'local_name_710', 'english_name_710', 1968),
 (711, 'local_name_711', 'english_name_711', 1979),
 (712, 'local_name_712', 'english_name_712', 1989),
@@ -760,6 +729,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (717, 'local_name_717', 'english_name_717', 1959),
 (718, 'local_name_718', 'english_name_718', 1964),
 (719, 'local_name_719', 'english_name_719', 1996),
+(72, 'local_name_72', 'english_name_72', 1973),
 (720, 'local_name_720', 'english_name_720', 1960),
 (721, 'local_name_721', 'english_name_721', 1960),
 (722, 'local_name_722', 'english_name_722', 1993),
@@ -770,6 +740,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (727, 'local_name_727', 'english_name_727', 1953),
 (728, 'local_name_728', 'english_name_728', 1951),
 (729, 'local_name_729', 'english_name_729', 1962),
+(73, 'local_name_73', 'english_name_73', 1981),
 (730, 'local_name_730', 'english_name_730', 2018),
 (731, 'local_name_731', 'english_name_731', 1970),
 (732, 'local_name_732', 'english_name_732', 1951),
@@ -780,6 +751,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (737, 'local_name_737', 'english_name_737', 1964),
 (738, 'local_name_738', 'english_name_738', 1980),
 (739, 'local_name_739', 'english_name_739', 2011),
+(74, 'local_name_74', 'english_name_74', 2016),
 (740, 'local_name_740', 'english_name_740', 1973),
 (741, 'local_name_741', 'english_name_741', 1973),
 (742, 'local_name_742', 'english_name_742', 1995),
@@ -790,6 +762,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (747, 'local_name_747', 'english_name_747', 2013),
 (748, 'local_name_748', 'english_name_748', 1992),
 (749, 'local_name_749', 'english_name_749', 1970),
+(75, 'local_name_75', 'english_name_75', 2008),
 (750, 'local_name_750', 'english_name_750', 2016),
 (751, 'local_name_751', 'english_name_751', 1950),
 (752, 'local_name_752', 'english_name_752', 1968),
@@ -800,6 +773,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (757, 'local_name_757', 'english_name_757', 1991),
 (758, 'local_name_758', 'english_name_758', 1950),
 (759, 'local_name_759', 'english_name_759', 2015),
+(76, 'local_name_76', 'english_name_76', 1956),
 (760, 'local_name_760', 'english_name_760', 1960),
 (761, 'local_name_761', 'english_name_761', 1994),
 (762, 'local_name_762', 'english_name_762', 2004),
@@ -810,6 +784,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (767, 'local_name_767', 'english_name_767', 2005),
 (768, 'local_name_768', 'english_name_768', 1991),
 (769, 'local_name_769', 'english_name_769', 1969),
+(77, 'local_name_77', 'english_name_77', 2003),
 (770, 'local_name_770', 'english_name_770', 2003),
 (771, 'local_name_771', 'english_name_771', 1987),
 (772, 'local_name_772', 'english_name_772', 2019),
@@ -820,6 +795,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (777, 'local_name_777', 'english_name_777', 1966),
 (778, 'local_name_778', 'english_name_778', 2002),
 (779, 'local_name_779', 'english_name_779', 1981),
+(78, 'local_name_78', 'english_name_78', 1990),
 (780, 'local_name_780', 'english_name_780', 1968),
 (781, 'local_name_781', 'english_name_781', 1980),
 (782, 'local_name_782', 'english_name_782', 1982),
@@ -830,6 +806,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (787, 'local_name_787', 'english_name_787', 1978),
 (788, 'local_name_788', 'english_name_788', 2016),
 (789, 'local_name_789', 'english_name_789', 1963),
+(79, 'local_name_79', 'english_name_79', 1960),
 (790, 'local_name_790', 'english_name_790', 1976),
 (791, 'local_name_791', 'english_name_791', 1974),
 (792, 'local_name_792', 'english_name_792', 1994),
@@ -840,6 +817,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (797, 'local_name_797', 'english_name_797', 2010),
 (798, 'local_name_798', 'english_name_798', 1983),
 (799, 'local_name_799', 'english_name_799', 1970),
+(8, 'local_name_8', 'english_name_8', 1976),
+(80, 'local_name_80', 'english_name_80', 1956),
 (800, 'local_name_800', 'english_name_800', 1969),
 (801, 'local_name_801', 'english_name_801', 2005),
 (802, 'local_name_802', 'english_name_802', 1974),
@@ -850,6 +829,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (807, 'local_name_807', 'english_name_807', 1971),
 (808, 'local_name_808', 'english_name_808', 2008),
 (809, 'local_name_809', 'english_name_809', 1967),
+(81, 'local_name_81', 'english_name_81', 1983),
 (810, 'local_name_810', 'english_name_810', 1986),
 (811, 'local_name_811', 'english_name_811', 1965),
 (812, 'local_name_812', 'english_name_812', 1956),
@@ -860,6 +840,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (817, 'local_name_817', 'english_name_817', 2009),
 (818, 'local_name_818', 'english_name_818', 2020),
 (819, 'local_name_819', 'english_name_819', 1998),
+(82, 'local_name_82', 'english_name_82', 2001),
 (820, 'local_name_820', 'english_name_820', 1994),
 (821, 'local_name_821', 'english_name_821', 2012),
 (822, 'local_name_822', 'english_name_822', 1964),
@@ -870,6 +851,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (827, 'local_name_827', 'english_name_827', 1991),
 (828, 'local_name_828', 'english_name_828', 2010),
 (829, 'local_name_829', 'english_name_829', 1966),
+(83, 'local_name_83', 'english_name_83', 1963),
 (830, 'local_name_830', 'english_name_830', 1980),
 (831, 'local_name_831', 'english_name_831', 2009),
 (832, 'local_name_832', 'english_name_832', 2007),
@@ -880,6 +862,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (837, 'local_name_837', 'english_name_837', 1968),
 (838, 'local_name_838', 'english_name_838', 1991),
 (839, 'local_name_839', 'english_name_839', 2006),
+(84, 'local_name_84', 'english_name_84', 2008),
 (840, 'local_name_840', 'english_name_840', 1984),
 (841, 'local_name_841', 'english_name_841', 2010),
 (842, 'local_name_842', 'english_name_842', 2013),
@@ -890,6 +873,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (847, 'local_name_847', 'english_name_847', 1997),
 (848, 'local_name_848', 'english_name_848', 1961),
 (849, 'local_name_849', 'english_name_849', 2009),
+(85, 'local_name_85', 'english_name_85', 1988),
 (850, 'local_name_850', 'english_name_850', 1988),
 (851, 'local_name_851', 'english_name_851', 2006),
 (852, 'local_name_852', 'english_name_852', 2006),
@@ -900,6 +884,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (857, 'local_name_857', 'english_name_857', 2000),
 (858, 'local_name_858', 'english_name_858', 1978),
 (859, 'local_name_859', 'english_name_859', 1986),
+(86, 'local_name_86', 'english_name_86', 1987),
 (860, 'local_name_860', 'english_name_860', 2014),
 (861, 'local_name_861', 'english_name_861', 1979),
 (862, 'local_name_862', 'english_name_862', 1978),
@@ -910,6 +895,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (867, 'local_name_867', 'english_name_867', 1969),
 (868, 'local_name_868', 'english_name_868', 1961),
 (869, 'local_name_869', 'english_name_869', 1988),
+(87, 'local_name_87', 'english_name_87', 1996),
 (870, 'local_name_870', 'english_name_870', 2017),
 (871, 'local_name_871', 'english_name_871', 1979),
 (872, 'local_name_872', 'english_name_872', 1985),
@@ -920,6 +906,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (877, 'local_name_877', 'english_name_877', 2009),
 (878, 'local_name_878', 'english_name_878', 1966),
 (879, 'local_name_879', 'english_name_879', 2005),
+(88, 'local_name_88', 'english_name_88', 1987),
 (880, 'local_name_880', 'english_name_880', 1978),
 (881, 'local_name_881', 'english_name_881', 1964),
 (882, 'local_name_882', 'english_name_882', 1959),
@@ -930,6 +917,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (887, 'local_name_887', 'english_name_887', 2018),
 (888, 'local_name_888', 'english_name_888', 1993),
 (889, 'local_name_889', 'english_name_889', 2017),
+(89, 'local_name_89', 'english_name_89', 2011),
 (890, 'local_name_890', 'english_name_890', 1961),
 (891, 'local_name_891', 'english_name_891', 1979),
 (892, 'local_name_892', 'english_name_892', 1988),
@@ -940,6 +928,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (897, 'local_name_897', 'english_name_897', 1987),
 (898, 'local_name_898', 'english_name_898', 1973),
 (899, 'local_name_899', 'english_name_899', 1950),
+(9, 'local_name_9', 'english_name_9', 1977),
+(90, 'local_name_90', 'english_name_90', 1978),
 (900, 'local_name_900', 'english_name_900', 1976),
 (901, 'local_name_901', 'english_name_901', 1975),
 (902, 'local_name_902', 'english_name_902', 1987),
@@ -950,6 +940,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (907, 'local_name_907', 'english_name_907', 1992),
 (908, 'local_name_908', 'english_name_908', 1998),
 (909, 'local_name_909', 'english_name_909', 1965),
+(91, 'local_name_91', 'english_name_91', 1984),
 (910, 'local_name_910', 'english_name_910', 1982),
 (911, 'local_name_911', 'english_name_911', 1983),
 (912, 'local_name_912', 'english_name_912', 2012),
@@ -960,6 +951,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (917, 'local_name_917', 'english_name_917', 1976),
 (918, 'local_name_918', 'english_name_918', 1977),
 (919, 'local_name_919', 'english_name_919', 2015),
+(92, 'local_name_92', 'english_name_92', 1989),
 (920, 'local_name_920', 'english_name_920', 1995),
 (921, 'local_name_921', 'english_name_921', 1973),
 (922, 'local_name_922', 'english_name_922', 1971),
@@ -970,6 +962,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (927, 'local_name_927', 'english_name_927', 1998),
 (928, 'local_name_928', 'english_name_928', 2001),
 (929, 'local_name_929', 'english_name_929', 1981),
+(93, 'local_name_93', 'english_name_93', 1969),
 (930, 'local_name_930', 'english_name_930', 1961),
 (931, 'local_name_931', 'english_name_931', 1985),
 (932, 'local_name_932', 'english_name_932', 1989),
@@ -980,6 +973,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (937, 'local_name_937', 'english_name_937', 1960),
 (938, 'local_name_938', 'english_name_938', 1991),
 (939, 'local_name_939', 'english_name_939', 1967),
+(94, 'local_name_94', 'english_name_94', 2014),
 (940, 'local_name_940', 'english_name_940', 2017),
 (941, 'local_name_941', 'english_name_941', 1988),
 (942, 'local_name_942', 'english_name_942', 2018),
@@ -990,6 +984,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (947, 'local_name_947', 'english_name_947', 1958),
 (948, 'local_name_948', 'english_name_948', 1969),
 (949, 'local_name_949', 'english_name_949', 2009),
+(95, 'local_name_95', 'english_name_95', 1951),
 (950, 'local_name_950', 'english_name_950', 1958),
 (951, 'local_name_951', 'english_name_951', 1955),
 (952, 'local_name_952', 'english_name_952', 1987),
@@ -1000,6 +995,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (957, 'local_name_957', 'english_name_957', 2005),
 (958, 'local_name_958', 'english_name_958', 1976),
 (959, 'local_name_959', 'english_name_959', 1962),
+(96, 'local_name_96', 'english_name_96', 2005),
 (960, 'local_name_960', 'english_name_960', 2002),
 (961, 'local_name_961', 'english_name_961', 1958),
 (962, 'local_name_962', 'english_name_962', 1995),
@@ -1010,6 +1006,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (967, 'local_name_967', 'english_name_967', 2016),
 (968, 'local_name_968', 'english_name_968', 1956),
 (969, 'local_name_969', 'english_name_969', 1990),
+(97, 'local_name_97', 'english_name_97', 1986),
 (970, 'local_name_970', 'english_name_970', 2012),
 (971, 'local_name_971', 'english_name_971', 1975),
 (972, 'local_name_972', 'english_name_972', 1999),
@@ -1020,6 +1017,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (977, 'local_name_977', 'english_name_977', 1963),
 (978, 'local_name_978', 'english_name_978', 1986),
 (979, 'local_name_979', 'english_name_979', 1984),
+(98, 'local_name_98', 'english_name_98', 2009),
 (980, 'local_name_980', 'english_name_980', 1991),
 (981, 'local_name_981', 'english_name_981', 1986),
 (982, 'local_name_982', 'english_name_982', 1986),
@@ -1030,6 +1028,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (987, 'local_name_987', 'english_name_987', 2006),
 (988, 'local_name_988', 'english_name_988', 2002),
 (989, 'local_name_989', 'english_name_989', 1986),
+(99, 'local_name_99', 'english_name_99', 2006),
 (990, 'local_name_990', 'english_name_990', 1993),
 (991, 'local_name_991', 'english_name_991', 1978),
 (992, 'local_name_992', 'english_name_992', 1983),
@@ -1039,222 +1038,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (996, 'local_name_996', 'english_name_996', 1981),
 (997, 'local_name_997', 'english_name_997', 1968),
 (998, 'local_name_998', 'english_name_998', 1953),
-(999, 'local_name_999', 'english_name_999', 1981),
-(1000, 'local_name_1000', 'english_name_1000', 1974);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `movie_data`
---
-
-CREATE TABLE `movie_data` (
-  `movie_id` int(6) NOT NULL COMMENT 'This is both PK and FK; movie_data is a WEAK entity',
-  `language` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `country` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `genre` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `plot` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `movie_data`
---
-
-INSERT INTO `movie_data` (`movie_id`, `language`, `country`, `genre`, `plot`) VALUES
-(1, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `movie_keywords`
---
-
-CREATE TABLE `movie_keywords` (
-  `movie_id` int(6) NOT NULL,
-  `keyword` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `movie_keywords`
---
-
-INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
-(1, 'amputee'),
-(1, 'based on book'),
-(1, 'vietnam war');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `movie_media`
---
-
-CREATE TABLE `movie_media` (
-  `movie_media_id` int(6) NOT NULL,
-  `m_link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `m_link_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'video, poster, image are three possible values.',
-  `movie_id` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `movie_media`
---
-
-INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) VALUES
-(1, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 1),
-(2, 'https://en.wikipedia.org/wiki/Forrest_Gump#/media/File:Forrest_Gump_poster.jpg', 'image', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `movie_people`
---
-
-CREATE TABLE `movie_people` (
-  `movie_id` int(6) NOT NULL,
-  `people_id` int(6) NOT NULL,
-  `role` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'director, producer, music director, lead actor, lead actress, supporting actor, supporting actress are possible values'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `movie_people`
---
-
-INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`) VALUES
-(1, 1, 'Director'),
-(1, 2, 'Novel Writer'),
-(1, 3, 'Screenplay'),
-(1, 4, 'Actor '),
-(1, 5, 'Actress'),
-(1, 6, 'Actress'),
-(1, 7, 'Actor'),
-(1, 8, 'Actor');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `movie_song`
---
-
-CREATE TABLE `movie_song` (
-  `movie_id` int(6) NOT NULL,
-  `song_id` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='This tables reflects an associative entity (movie,song)';
-
---
--- Dumping data for table `movie_song`
---
-
-INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
-(1, 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `people`
---
-
-CREATE TABLE `people` (
-  `id` int(6) NOT NULL,
-  `screen_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'Many people in the movie industry are known by short names',
-  `first_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `middle_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `last_name` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `gender` varchar(6) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `image_name` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'We will store the images locally on the server; This field refers to the image file name'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `people`
---
-
-INSERT INTO `people` (`id`, `screen_name`, `first_name`, `middle_name`, `last_name`, `gender`, `image_name`) VALUES
-(1, 'Robert', 'Robert', '', 'Zemeckis', 'Male', 'robert_zemeckis.jpg'),
-(2, 'Winston', 'Winston', '', 'Groom', 'Male', 'winston_groom.jpg'),
-(3, 'Eric', 'Eric', '', 'Roth', 'Male', 'eric_roth.jpg'),
-(4, 'Tom Hanks', 'Thomas', 'Jeffrey', 'Hanks', 'Male', 'tom_hanks.jpg'),
-(5, 'Rebecca Williams', 'Rebecca', '', 'Williams', 'Female', 'rebecca_williams.jpg'),
-(6, 'Sally Field', 'Sally', 'Margaret', 'Field', 'Female', 'sally_field.jpg'),
-(7, 'Michael', 'Michael', 'Conner', 'Humphreys', 'Male', 'michael_humphreys.jpg'),
-(8, 'Harold', 'Harold', 'G', 'Herthum', 'Male', 'harold_herthum.jpg'),
-(9, 'Alan', 'Alan', 'Anthony', 'Silvestri', 'Male', 'alan_silvestri.jpg');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `songs`
---
-
-CREATE TABLE `songs` (
-  `song_id` int(5) NOT NULL,
-  `title` varchar(11) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `lyrics` varchar(11) COLLATE utf8mb4_unicode_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `songs`
---
-
-INSERT INTO `songs` (`song_id`, `title`, `lyrics`) VALUES
-(1, 'I\'m Forrest', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `song_keywords`
---
-
-CREATE TABLE `song_keywords` (
-  `song_id` int(5) NOT NULL,
-  `keyword` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `song_keywords`
---
-
-INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
-(1, 'Heartwarming'),
-(1, 'Sad');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `song_media`
---
-
-CREATE TABLE `song_media` (
-  `song_media_id` int(6) NOT NULL,
-  `s_link` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `s_link_type` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'audio and video are two possible values',
-  `song_id` int(6) NOT NULL COMMENT 'is the FK'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `song_media`
---
-
-INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
-(1, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 1);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `song_people`
---
-
-CREATE TABLE `song_people` (
-  `song_id` int(6) NOT NULL,
-  `people_id` int(6) NOT NULL,
-  `role` varchar(15) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `song_people`
---
-
-INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
-(1, 9, 'Composer');
+(999, 'local_name_999', 'english_name_999', 1981);
 
 --
 -- Indexes for dumped tables
@@ -1264,77 +1048,7 @@ INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 -- Indexes for table `movies`
 --
 ALTER TABLE `movies`
-  ADD PRIMARY KEY (`movie_id`);
-
---
--- Indexes for table `movie_data`
---
-ALTER TABLE `movie_data`
-  ADD PRIMARY KEY (`movie_id`);
-
---
--- Indexes for table `movie_keywords`
---
-ALTER TABLE `movie_keywords`
-  ADD PRIMARY KEY (`movie_id`,`keyword`);
-
---
--- Indexes for table `movie_media`
---
-ALTER TABLE `movie_media`
-  ADD PRIMARY KEY (`movie_media_id`);
-
---
--- Indexes for table `movie_people`
---
-ALTER TABLE `movie_people`
-  ADD PRIMARY KEY (`movie_id`,`people_id`,`role`);
-
---
--- Indexes for table `movie_song`
---
-ALTER TABLE `movie_song`
-  ADD PRIMARY KEY (`movie_id`,`song_id`);
-
---
--- Indexes for table `people`
---
-ALTER TABLE `people`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `songs`
---
-ALTER TABLE `songs`
-  ADD PRIMARY KEY (`song_id`);
-
---
--- Indexes for table `song_keywords`
---
-ALTER TABLE `song_keywords`
-  ADD PRIMARY KEY (`song_id`,`keyword`);
-
---
--- Indexes for table `song_media`
---
-ALTER TABLE `song_media`
-  ADD PRIMARY KEY (`song_media_id`);
-
---
--- Indexes for table `song_people`
---
-ALTER TABLE `song_people`
-  ADD PRIMARY KEY (`song_id`,`people_id`,`role`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `movies`
---
-ALTER TABLE `movies`
-  MODIFY `movie_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1003;
+  ADD PRIMARY KEY (`name`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
