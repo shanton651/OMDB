@@ -1,4 +1,4 @@
-movie_ID,native_name,english_name,year
+movie_id,native_name,english_name,year
 1,local_name_1,english_name_1,1962
 2,local_name_2,english_name_2,1955
 3,local_name_3,english_name_3,1999
