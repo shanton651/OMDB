@@ -154,6 +154,37 @@
 
 	      }	      
 
+        /* MOVIE TRIVIA */
+
+	      if (isset($_GET['id'])) {
+
+	          $id = mysqli_real_escape_string($db, $_GET['id']);
+	          $sql = "SELECT * FROM `movies` NATURAL JOIN `movie_trivia` WHERE movies.movie_id = movie_trivia.movie_id AND movies.movie_id = " . $id;
+	          $GLOBALS['row_data'] = mysqli_query($db, $sql);
+
+	      }
+
+	      if ($row_data->num_rows > 0) {
+
+	        // fetch row_data_1 from $_Globals
+
+	      	print('</br><h2 class= "head"> Movie Trivia </h2> <hr>
+	      		  <h3 class= "title"> Trivia list: </h3></br>');
+
+	        while($row = $row_data->fetch_assoc()) {
+
+	            print(  '<p class= "words"> - ' .$row["trivia"]. ' </p>' );
+
+	        }
+
+	      }
+
+	      else {
+
+	        print('<hr>NO DATA ON MOVIE_TRIVIA');
+
+	      }	 
+
         /* MOVIE KEYWORDS */
 
 	      if (isset($_GET['id'])) {
