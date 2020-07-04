@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 02, 2020 at 02:36 AM
+-- Generation Time: Jul 04, 2020 at 02:07 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.17
 
@@ -20,8 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `omdb`
 --
-CREATE DATABASE IF NOT EXISTS `omdb` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
-USE `omdb`;
 
 -- --------------------------------------------------------
 
@@ -49,7 +47,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (6, 'local_name_6', 'english_name_6', 2000),
 (7, 'local_name_7', 'english_name_7', 1973),
 (8, 'local_name_8', 'english_name_8', 1951),
-(9, 'local_name_9', 'english_name_9', 1963),
+(9, 'Shrek', 'Shrek', 2001),
 (10, 'local_name_10', 'english_name_10', 1920),
 (11, 'Forrest Gump', 'Forrest Gump', 1994),
 (12, 'local_name_12', 'english_name_12', 1992),
@@ -1064,6 +1062,7 @@ CREATE TABLE `movie_data` (
 
 INSERT INTO `movie_data` (`movie_id`, `language`, `country`, `genre`, `plot`) VALUES
 (1, 'English', 'USA', 'Animation', 'Princess Elsa of Arendelle possesses magical powers that allow her to control and create ice and snow, often using them to play with her younger sister, Anna. After Elsa accidentally injures Anna with her magic, their parents, the King and Queen, take both siblings to a colony of trolls led by Grand Pabbie. He heals Anna, but alters her memories so that she forgets about Elsa\'s magic. Grand Pabbie warns Elsa that she must learn to control her powers, and that fear will be her greatest enemy. The'),
+(9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 (11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.');
 
 -- --------------------------------------------------------
@@ -1082,6 +1081,10 @@ CREATE TABLE `movie_keywords` (
 --
 
 INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
+(9, 'Animation'),
+(9, 'Fairytale'),
+(9, 'Ogre'),
+(9, 'Swamp'),
 (11, 'amputee'),
 (11, 'based on book'),
 (11, 'vietnam war');
@@ -1104,6 +1107,7 @@ CREATE TABLE `movie_media` (
 --
 
 INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) VALUES
+(91, 'https://www.youtube.com/watch?v=W37DlG1i61s', 'Video', 9),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
 (112, 'https://en.wikipedia.org/wiki/Forrest_Gump#/media/File:Forrest_Gump_poster.jpg', 'image', 11);
 
@@ -1130,6 +1134,11 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`) VALUES
 (1, 3, 'Producer'),
 (1, 4, 'Lead Actress'),
 (1, 5, 'Lead Actor'),
+(9, 91, 'Director'),
+(9, 92, 'Director'),
+(9, 93, 'Actor'),
+(9, 94, 'Actor'),
+(9, 95, 'Actress'),
 (11, 111, 'Director'),
 (11, 112, 'Novel Writer'),
 (11, 113, 'Screenplay'),
@@ -1155,6 +1164,7 @@ CREATE TABLE `movie_song` (
 --
 
 INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
+(9, 91),
 (11, 111);
 
 -- --------------------------------------------------------
@@ -1201,6 +1211,12 @@ INSERT INTO `people` (`id`, `screen_name`, `first_name`, `middle_name`, `last_na
 (3, 'Peter Vecho', 'Peter', 'Del ', 'Vecho', 'Male', ''),
 (4, 'Kristen Bell', 'Kristen', '', 'Bell', 'Female', ''),
 (5, 'Jonathan Groff', 'Jonathan ', 'Drew', 'Groff', 'Male', ''),
+(91, 'Andrew', 'Andrew', ' ', 'Adamson', 'Male', 'Andrew_Adamson.jpg'),
+(92, 'Vicky', 'Vicky', ' ', 'Jenson', 'Female', 'Vicky_Jenson.jpg'),
+(93, 'Mike', 'Mike', ' ', 'Myers', 'Male', 'Mike_Myers.jpg'),
+(94, 'Eddie', 'Eddie', ' ', 'Murphy', 'Male', 'Eddie_Murphy.jpg'),
+(95, 'Cameron', 'Cameron', ' ', 'Diaz', 'Female', 'Cameron_Diaz.jpg'),
+(96, 'Neil', 'Neil', ' ', 'Diamond', 'Male', 'Neil_Diamond'),
 (111, 'Robert', 'Robert', '', 'Zemeckis', 'Male', 'robert_zemeckis.jpg'),
 (112, 'Winston', 'Winston', '', 'Groom', 'Male', 'winston_groom.jpg'),
 (113, 'Eric', 'Eric', '', 'Roth', 'Male', 'eric_roth.jpg'),
@@ -1229,6 +1245,7 @@ CREATE TABLE `songs` (
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`) VALUES
 (1, 'Let It go', 'The snow glows white on the mountain tonight\r\nNot a footprint to be seen\r\nA kingdom of isolation\r\nAnd it looks like I\'m the queen\r\nThe wind is howling like this swirling storm inside\r\nCouldn\'t keep it in, heaven knows I\'ve tried\r\nDon\'t let them in, don\'t let them see\r\nBe the good girl you always have to be\r\nConceal, don\'t feel, don\'t let them know\r\nWell, now they know\r\nLet it go, let it go\r\nCan\'t hold it back anymore\r\nLet it go, let it go\r\nTurn away and slam the door\r\nI don\'t care what they\'re going to say\r\nLet the storm rage on\r\nThe cold never bothered me anyway\r\nLet it go, let it go\r\nCan\'t hold it back anymore\r\nLet it go, let it go\r\nTurn away and slam the door\r\nLet it go (go, go, go go, go go, go go, go, go, go go)\r\nLet it go\r\nLet it go\r\nLet it go\r\nIt\'s funny how some distance makes…'),
+(91, 'I\'m a Belie', NULL),
 (111, 'I\'m Forrest', NULL);
 
 -- --------------------------------------------------------
@@ -1247,6 +1264,9 @@ CREATE TABLE `song_keywords` (
 --
 
 INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
+(91, 'Energetic'),
+(91, 'Happy'),
+(91, 'Upbeat'),
 (111, 'Heartwarming'),
 (111, 'Sad');
 
@@ -1268,6 +1288,7 @@ CREATE TABLE `song_media` (
 --
 
 INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
+(91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
 (111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111);
 
 -- --------------------------------------------------------
@@ -1287,6 +1308,7 @@ CREATE TABLE `song_people` (
 --
 
 INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
+(91, 96, 'Composer'),
 (111, 119, 'Composer');
 
 --
