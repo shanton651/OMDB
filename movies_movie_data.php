@@ -2,7 +2,7 @@
 
   $nav_selected = "MOVIES"; 
   $left_buttons = "YES"; 
-  $left_selected = "EXTENDED"; 
+  $left_selected = "MOVIE_DATA"; 
 
   include("./nav.php");
 
@@ -12,7 +12,7 @@
 <div class="right-content">
     <div class="container">
 
-      <h2 style = "color: #01B0F1;">Movies: Extended</h3>
+      <h2 style = "color: #01B0F1;">Movies: Movie Data</h3>
 
       </br>
 

@@ -2,7 +2,7 @@
 
   $nav_selected = "MOVIES"; 
   $left_buttons = "YES"; 
-  $left_selected = "EXTENDED_RELATION"; 
+  $left_selected = "MOVIE_DATA_RELATION"; 
 
   include("./nav.php");
 
@@ -12,7 +12,7 @@
 <div class="right-content">
     <div class="container">
 
-      <h2 style = "color: #01B0F1;">Movies: Extended Relation</h3>
+      <h2 style = "color: #01B0F1;">Movies: Movie_data Relation</h3>
 
         </br>
 
