@@ -37,7 +37,7 @@
 
               <?php
 
-$sql = "SELECT * from `movies` ORDER BY year_made ASC;";
+$sql = "SELECT `year_made`, COUNT(movie_id) AS 'movie_count' FROM `movies` GROUP BY `year_made` DESC;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
