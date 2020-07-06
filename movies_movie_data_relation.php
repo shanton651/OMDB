@@ -2,10 +2,9 @@
 
   $nav_selected = "MOVIES"; 
   $left_buttons = "YES"; 
-  $left_selected = "SONGS"; 
+  $left_selected = "MOVIE_DATA_RELATION"; 
 
   include("./nav.php");
-  global $db;
 
   ?>
 
@@ -13,7 +12,7 @@
 <div class="right-content">
     <div class="container">
 
-      <h2 style = "color: #01B0F1;">Movies: Songs Relation</h3>
+      <h2 style = "color: #01B0F1;">Movies: Movie_data Relation</h3>
 
         </br>
 
@@ -25,8 +24,11 @@
                         <th>ID</th>
                         <th>Native Name</th>
                         <th>English Name</th>
-                        <th>Song Title</th>
-                        <th>Lyrics</th>
+                        <th>Year</th>
+                        <th>Language</th>
+                        <th>Country</th>
+                        <th>Genre</th>
+                        <th>Plot</th>
                 </tr>
               </thead>
 
@@ -35,8 +37,11 @@
                         <th>ID</th>
                         <th>Native Name</th>
                         <th>English Name</th>
-                        <th>Song Title</th>
-                        <th>Lyrics</th>                        
+                        <th>Year</th>
+                        <th>Language</th>
+                        <th>Country</th>
+                        <th>Genre</th>
+                        <th>Plot</th>                       
                 </tr>
               </tfoot>
 
@@ -54,8 +59,11 @@ $result = $db->query($sql);
                                 <td>'.$row["movie_id"].'</td>
                                 <td>'.$row["native_name"].'</td>
                                 <td>'.$row["english_name"].' </span> </td>
-                                <td>'.$row["title"].'</td>
-                                <td>'.$row["lyrics"].'</td>
+                                <td>'.$row["year_made"].'</td>
+                                <td>'.$row["language"].'</td>
+                                <td>'.$row["country"].'</td>
+                                <td>'.$row["genre"].'</td>
+                                <td>'.$row["plot"].'</td>                             
                             </tr>';
                     }//end while
                 }//end if

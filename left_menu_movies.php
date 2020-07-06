@@ -47,11 +47,11 @@
 
 	</a>
 
-	<a href="movies_extended.php">
+	<a href="movies_movie_data.php">
 
-	  <div <?php if($left_selected == "EXTENDED"){ echo 'class="menu-left-current-page"'; } ?>>
+	  <div <?php if($left_selected == "MOVIE_DATA"){ echo 'class="menu-left-current-page"'; } ?>>
 	  	
-	  	<br/>Extended<br/>
+	  	<br/>Movie Data<br/>
 
 	  </div>
 
@@ -89,11 +89,11 @@
 
 	</a>
 
-	<a href="movies_extended_relation.php">
+	<a href="movies_movie_data_relation.php">
 
-	  <div <?php if($left_selected == "EXTENDED_RELATION"){ echo 'class="menu-left-current-page"'; } ?>>
+	  <div <?php if($left_selected == "MOVIE_DATA_RELATION"){ echo 'class="menu-left-current-page"'; } ?>>
 	  	
-	  	<br/>Movies-Extended<br/>
+	  	<br/>Movies-Movie_data<br/>
 
 	  </div>
 
