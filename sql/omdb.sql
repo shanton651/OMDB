@@ -1175,6 +1175,7 @@ CREATE TABLE `movie_song` (
 --
 
 INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
+(1, 1),
 (8, 811),
 (9, 91),
 (11, 111);
@@ -1261,7 +1262,7 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`) VALUES
-(1, 'Let It go', 'The snow glows white on the mountain tonight\r\nNot a footprint to be seen\r\nA kingdom of isolation\r\nAnd it looks like I\'m the queen\r\nThe wind is howling like this swirling storm inside\r\nCouldn\'t keep it in, heaven knows I\'ve tried\r\nDon\'t let them in, don\'t let them see\r\nBe the good girl you always have to be\r\nConceal, don\'t feel, don\'t let them know\r\nWell, now they know\r\nLet it go, let it go\r\nCan\'t hold it back anymore\r\nLet it go, let it go\r\nTurn away and slam the door\r\nI don\'t care what they\'re going to say\r\nLet the storm rage on\r\nThe cold never bothered me anyway\r\nLet it go, let it go\r\nCan\'t hold it back anymore\r\nLet it go, let it go\r\nTurn away and slam the door\r\nLet it go (go, go, go go, go go, go go, go, go, go go)\r\nLet it go\r\nLet it go\r\nLet it go\r\nIt\'s funny how some distance makes…'),
+(1, 'Let It go', 'The snow glows white on the mountain tonight Not a footprint to be seen A kingdom of isolation And it looks like I am the queen…'),
 (811, 'Her Eyes', NULL),
 (91, 'I\'m a Belie', NULL),
 (111, 'I\'m Forrest', NULL);

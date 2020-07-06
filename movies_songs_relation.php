@@ -44,7 +44,7 @@
 
               <?php
 
-$sql = "SELECT * from `movies` ORDER BY year_made ASC;";
+$sql = "SELECT * FROM movies NATURAL JOIN movie_song NATURAL JOIN songs;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
