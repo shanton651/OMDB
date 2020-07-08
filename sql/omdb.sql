@@ -51,7 +51,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (10, 'local_name_10', 'english_name_10', 1920),
 (11, 'Forrest Gump', 'Forrest Gump', 1994),
 (12, 'local_name_12', 'english_name_12', 1992),
-(13, 'local_name_13', 'english_name_13', 2010),
+(13, 'Gladiator', 'Gladiator', 2000),
 (14, 'local_name_14', 'english_name_14', 1968),
 (15, 'local_name_15', 'english_name_15', 1936),
 (16, 'local_name_16', 'english_name_16', 1972),
@@ -1066,7 +1066,7 @@ INSERT INTO `movie_data` (`movie_id`, `language`, `country`, `genre`, `plot`) VA
 With the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
 (9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 (11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.');
-
+(13,'English','USA','Action','Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.'),
 -- --------------------------------------------------------
 
 --
@@ -1092,7 +1092,11 @@ INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
 (9, 'Swamp'),
 (11, 'amputee'),
 (11, 'based on book'),
-(11, 'vietnam war');
+(11, 'vietnam war'),
+(13, 'Rome'),
+(13, 'Freedom'),
+(13, 'Family');
+
 
 -- --------------------------------------------------------
 
@@ -1116,7 +1120,8 @@ INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`
 (812, 'https://en.wikipedia.org/wiki/The_Secret_in_Their_Eyes#/media/File:Cartel-nuevo-de-el-secreto-de-sus-ojos.jpg', 'image', 8),
 (91, 'https://www.youtube.com/watch?v=W37DlG1i61s', 'Video', 9),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
-(112, 'https://en.wikipedia.org/wiki/Forrest_Gump#/media/File:Forrest_Gump_poster.jpg', 'image', 11);
+(112, 'https://en.wikipedia.org/wiki/Forrest_Gump#/media/File:Forrest_Gump_poster.jpg', 'image', 11)
+(131,'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13);
 
 -- --------------------------------------------------------
 
@@ -1157,7 +1162,12 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`) VALUES
 (11, 115, 'Actress'),
 (11, 116, 'Actress'),
 (11, 117, 'Actor'),
-(11, 118, 'Actor');
+(11, 118, 'Actor'),
+(13, 131, 'Director'),
+(13, 132, 'Screenplay'),
+(13, 133, 'Actor'),
+(13, 134, 'Actress'),
+(13, 135, 'Actor');
 
 -- --------------------------------------------------------
 
@@ -1243,7 +1253,13 @@ INSERT INTO `people` (`id`, `screen_name`, `first_name`, `middle_name`, `last_na
 (116, 'Sally Field', 'Sally', 'Margaret', 'Field', 'Female', 'sally_field.jpg'),
 (117, 'Michael', 'Michael', 'Conner', 'Humphreys', 'Male', 'michael_humphreys.jpg'),
 (118, 'Harold', 'Harold', 'G', 'Herthum', 'Male', 'harold_herthum.jpg'),
-(119, 'Alan', 'Alan', 'Anthony', 'Silvestri', 'Male', 'alan_silvestri.jpg');
+(119, 'Alan', 'Alan', 'Anthony', 'Silvestri', 'Male', 'alan_silvestri.jpg'),
+(131, 'Ridley', 'Ridley', '', 'Scott', 'Male', 'Ridley_Scott.jpg'),
+(132, 'John', 'John', '', 'Logan', 'Male', 'john_logan.jpg'),
+(133, 'Russel', 'Russel', 'Crowe', '', 'Male', 'Russel_crowe'),
+(135, 'Connie Nelson', 'Connie', '', 'Connie', 'Female', 'Connie_Nelson.jpg'),
+(136, 'Joaquin Phoenix', '', '', '', 'male', 'Joaquin_Phoenix.jpg');
+
 
 -- --------------------------------------------------------
 
@@ -1265,7 +1281,8 @@ INSERT INTO `songs` (`song_id`, `title`, `lyrics`) VALUES
 (1, 'Let It go', 'The snow glows white on the mountain tonight Not a footprint to be seen A kingdom of isolation And it looks like I am the queen…'),
 (811, 'Her Eyes', NULL),
 (91, 'I\'m a Belie', NULL),
-(111, 'I\'m Forrest', NULL);
+(111, 'I\'m Forrest', NULL),
+(131, 'Now we are free',NULL);
 
 -- --------------------------------------------------------
 
@@ -1288,7 +1305,8 @@ INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (91, 'Happy'),
 (91, 'Upbeat'),
 (111, 'Heartwarming'),
-(111, 'Sad');
+(111, 'Sad'),
+(113, 'free');
 
 -- --------------------------------------------------------
 
@@ -1310,7 +1328,8 @@ CREATE TABLE `song_media` (
 INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
 (811, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 811),
 (91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
-(111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111);
+(111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111),
+(113,'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video',131);
 
 -- --------------------------------------------------------
 
