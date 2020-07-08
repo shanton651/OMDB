@@ -54,7 +54,7 @@ $result = $db->query($sql);
                                 <td>'.$row["native_name"].'</td>
                                 <td>'.$row["english_name"].' </span> </td>
                                 <td>'.$row["year_made"].'</td>
-                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?id='.$row["movie_id"].'">Info</a></td>
+                                <td> <a class="btn btn-info btn-sm" href="movie_info.php?movie_id='.$row["movie_id"].'">Info</a></td>
                             </tr>';
                     }//end while
                 }//end if

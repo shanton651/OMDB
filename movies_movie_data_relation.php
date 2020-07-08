@@ -1,8 +1,8 @@
 <?php
 
-  $nav_selected = "REPORTS"; 
+  $nav_selected = "MOVIES"; 
   $left_buttons = "YES"; 
-  $left_selected = "SUMMARY"; 
+  $left_selected = "MOVIE_DATA_RELATION"; 
 
   include("./nav.php");
 
@@ -12,7 +12,7 @@
 <div class="right-content">
     <div class="container">
 
-      <h2 style = "color: #01B0F1;">Reports: Movie/Year Summary</h3>
+      <h2 style = "color: #01B0F1;">Movies: Movie_data Relation</h3>
 
         </br>
 
@@ -21,15 +21,27 @@
             width="100%" style="width: 100px;">
               <thead>
                 <tr id="table-first-row">
+                        <th>ID</th>
+                        <th>Native Name</th>
+                        <th>English Name</th>
                         <th>Year</th>
-                        <th>Movie Count</th>
+                        <th>Language</th>
+                        <th>Country</th>
+                        <th>Genre</th>
+                        <th>Plot</th>
                 </tr>
               </thead>
 
               <tfoot>
                 <tr>
+                        <th>ID</th>
+                        <th>Native Name</th>
+                        <th>English Name</th>
                         <th>Year</th>
-                        <th>Movie Count</th>                     
+                        <th>Language</th>
+                        <th>Country</th>
+                        <th>Genre</th>
+                        <th>Plot</th>                       
                 </tr>
               </tfoot>
 
@@ -37,16 +49,21 @@
 
               <?php
 
-$sql = "SELECT `year_made`, COUNT(movie_id) AS 'movie_count' FROM `movies` GROUP BY `year_made` DESC;";
+$sql = "SELECT * from `movies` ORDER BY year_made ASC;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_assoc()) {
                         echo '<tr>
+                                <td>'.$row["movie_id"].'</td>
+                                <td>'.$row["native_name"].'</td>
+                                <td>'.$row["english_name"].' </span> </td>
                                 <td>'.$row["year_made"].'</td>
-                                <td>'.$row["movie_count"].'</td>
-                          
+                                <td>'.$row["language"].'</td>
+                                <td>'.$row["country"].'</td>
+                                <td>'.$row["genre"].'</td>
+                                <td>'.$row["plot"].'</td>                             
                             </tr>';
                     }//end while
                 }//end if
