@@ -49,7 +49,7 @@
 
               <?php
 
-$sql = "SELECT * from `movies` ORDER BY year_made ASC;";
+$sql = "SELECT movie_id, native_name, english_name, year_made, tag_line, language, country, genre, SUBSTRING(plot, 1, 30) AS plot from movies NATURAL JOIN movie_data;";
 $result = $db->query($sql);
 
                 if ($result->num_rows > 0) {
