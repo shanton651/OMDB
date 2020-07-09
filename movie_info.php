@@ -144,11 +144,11 @@
 	    $sql_Q5_result = $db->query($sql_Q5);
 
 	    // People query
-	    $sql_Q6a = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_people` NATURAL JOIN `people` WHERE movie_people.people_id = people.id AND movie_people.movie_id = " . $movie_id;
+	    $sql_Q6a = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_people` NATURAL JOIN `people` WHERE movie_people.people_id = people.people_id AND movie_people.movie_id = " . $movie_id;
 	    $sql_Q6a_result = $db->query($sql_Q6a);
 
         // People song_people query
-	    $sql_Q6b = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_song` NATURAL JOIN `song_people` NATURAL JOIN `people` WHERE movie_song.song_id = song_people.song_id AND song_people.people_id = people.id AND movie_song.movie_id = " . $movie_id;
+	    $sql_Q6b = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_song` NATURAL JOIN `song_people` NATURAL JOIN `people` WHERE movie_song.song_id = song_people.song_id AND song_people.people_id = people.people_id AND movie_song.movie_id = " . $movie_id;
 	    $sql_Q6b_result = $db->query($sql_Q6b);
 
 	    // Song query
@@ -160,7 +160,7 @@
 	    $sql_Q8_result = $db->query($sql_Q8);
 
 	    // Song people query
-	    $sql_Q9 = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_song` NATURAL JOIN `songs` NATURAL JOIN `song_people` NATURAL JOIN `people` WHERE movie_song.song_id = song_people.song_id && songs.song_id AND song_people.people_id = people.id AND movie_song.movie_id = " . $movie_id;
+	    $sql_Q9 = "SELECT *, CONCAT(first_name, ' ', middle_name, ' ', last_name) AS full_name FROM `movie_song` NATURAL JOIN `songs` NATURAL JOIN `song_people` NATURAL JOIN `people` WHERE movie_song.song_id = song_people.song_id && songs.song_id AND song_people.people_id = people.people_id AND movie_song.movie_id = " . $movie_id;
 	    $sql_Q9_result = $db->query($sql_Q9);
 
 	    // Song keywords query
@@ -258,7 +258,7 @@
 
 	        while($q4_tuple = $sql_Q4_result->fetch_assoc()) {
 
-	            print(  '<p class= "words"> - ' .$q4_tuple["trivia"]. ' </p>' );
+	            print(  '<p class= "words"> - ' .$q4_tuple["movie_trivia_name"]. ' </p>' );
 
 	        }
 
@@ -305,7 +305,7 @@
 	        while($q6a_tuple = $sql_Q6a_result->fetch_assoc()) {
 
 	            print( '<div class="person"><figure><img src="./images/people/'.$q6a_tuple["image_name"].'"></img></figure>
-	                    <h3 class= "title"> Screen Name: </h3><p class= "words">' .$q6a_tuple["screen_name"]. '</p>
+	                    <h3 class= "title"> Stage Name: </h3><p class= "words">' .$q6a_tuple["stage_name"]. '</p>
 	                    <h3 class= "title"> Full Name: </h3><p class= "words">' .$q6a_tuple["full_name"]. '</p>
 	                    <h3 class= "title"> Role: </h3><p class= "words">' .$q6a_tuple["role"]. '</p>
 	                    <h3 class= "title"> Gender: </h3><p class= "words">' .$q6a_tuple["gender"]. '</p></div>' );
@@ -316,8 +316,7 @@
 
 		        while($q6b_tuple = $sql_Q6b_result->fetch_assoc()) {
 
-		            print('<div class="person"><figure><img src="./images/people/'.$q6b_tuple["image_name"].'"></img></figure>
-			                    <h3 class= "title"> Screen Name: </h3><p class= "words">' .$q6b_tuple["screen_name"]. '</p>
+		            print('<div class="person"><figure><img src="./images/people/'.$q6b_tuple["image_name"].'"></img></figure></p>
 			                    <h3 class= "title"> Full Name: </h3><p class= "words">' .$q6b_tuple["full_name"]. '</p>
 			                    <h3 class= "title"> Role: </h3><p class= "words">' .$q6b_tuple["role"]. '</p>
 			                    <h3 class= "title"> Gender: </h3><p class= "words">' .$q6b_tuple["gender"]. '</p></div>');
@@ -350,6 +349,7 @@
 
 	            print( '<h3 class= "title"> Title: </h3><p class= "words">' .$q7_tuple["title"]. '</p>
 	                    <h3 class= "title"> Lyrics: </h3><p class= "words">' .$q7_tuple["lyrics"]. '</p>
+	                    <h3 class= "title"> Theme: </h3><p class= "words">' .$q7_tuple["theme"]. '</p>
 	                    </br><div style="width: 50%; border-bottom: 1px groove gray; opacity: 0.3;"></div>' );
 
 	        }
