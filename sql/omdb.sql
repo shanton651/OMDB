@@ -53,7 +53,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (9, 'Shrek', 'Shrek', 2001),
 (10, 'Pulp Fiction', 'Pulp Fiction', 1994),
 (11, 'Forrest Gump', 'Forrest Gump', 1994),
-(12, 'Singin\' in the Rain', 'Singin\' in the Rain', 1952),
+(12,'Taxi Driver','Taxi driver', 1976),
 (13, 'Gladiator', 'Gladiator', 2000),
 (14, 'Taxi Driver', 'Taxi Driver', 1976),
 (15, 'Battleship Potemkin', 'Battleship Potemkin', 1925),
@@ -1070,6 +1070,7 @@ With the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Vil
 ('', 9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 ('', 10, 'English', 'USA', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
 ('', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
+('', 12, 'english','United States','Noir','A Taxi Driver explores New York'),
 ('', 13,'English','USA','Action','Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.');
 
 -- --------------------------------------------------------
@@ -1105,6 +1106,9 @@ INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
 (11, 'amputee'),
 (11, 'based on book'),
 (11, 'vietnam war'),
+(12,'taxi'),
+(12,'Violent'),
+(12,'New York'),
 (13, 'Rome'),
 (13, 'Freedom'),
 (13, 'Family');
@@ -1138,6 +1142,7 @@ INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`
 (102, 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg', 'image', 10),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
 (112, 'forrest_gump_poster.jpg', 'poster', 11),
+(12,'https://www.originalfilmart.com/products/taxi-driver-1976-linen','Poster',12),
 (131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13);
 
 -- --------------------------------------------------------
@@ -1195,6 +1200,15 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (11, 116, 'Actress', ''),
 (11, 117, 'Actor', ''),
 (11, 118, 'Actor', ''),
+(12,121,'Main Actor',''),
+(12,122,'Main Actress',''),
+(12,123,'Supporting Actor',''),
+(12,124,'Supporting Actor',''),
+(12,125,'Supporting Actor',''),
+(12,126,'Composer',''),
+(12,127,'Supporting Actress',''),
+(12,128,'Director',''),
+(12,129,'Producer',''),
 (13, 131, 'Director', ''),
 (13, 132, 'Screenplay', ''),
 (13, 133, 'Actor', ''),
@@ -1234,7 +1248,17 @@ INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
 (9, 91),
 (10, 101),
 (10, 102),
-(11, 111);
+(11, 111),
+(12,120),
+(12,121),
+(12,122),
+(12,123),
+(12,124),
+(12,125),
+(12,126),
+(12,127),
+(12,128),
+(12,129);
 
 -- --------------------------------------------------------
 
@@ -1254,7 +1278,8 @@ CREATE TABLE `movie_trivia` (
 
 INSERT INTO `movie_trivia` (`movie_id`, `movie_trivia_id`, `movie_trivia_name`) VALUES
 (10, 101, 'Pulp Fiction only cost $8 million to make.'),
-(11, 111, 'Forrest Gump is based on a novel.');
+(11, 111, 'Forrest Gump is based on a novel.'),
+(12, 112, 'Harvey Keitel rehearsed with pimps to prepare for his role.');
 
 -- --------------------------------------------------------
 
@@ -1311,6 +1336,15 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (116, 'Sally Field', 'Sally', 'Margaret', 'Field', 'Female', 'sally_field.jpg'),
 (117, 'Michael', 'Michael', 'Conner', 'Humphreys', 'Male', 'michael_humphreys.jpg'),
 (118, 'Harold', 'Harold', 'G', 'Herthum', 'Male', 'harold_herthum.jpg'),
+(121,'Travis Bickle','Robert','','De Niro','M','RDeniro121.jpg'),
+(122,'Iris','Jodie','','Foster','F','JFoster122.jpg'),
+(123,'Tom','Albert','','Brooks','M','ABrooks123.jpg'),
+(124,'Sport','Harvey','','Keitel','M','HKeitel124.jpg'),
+(125,'Charles Palantine','Leonard','','Harris','M','LHarris125.jpg'),
+(126,'Composer','Bernard','','Hermann','M','BHermann126.jpg'),
+(127,'Betsy','Cybill','','Shepherd','F','CShepherd127.jpg'),
+(128,'DIRECTOR','Martin','','Scorsese','M','MScorsese128.jpg'),
+(129,'PRODUCER','Julia','','Phillips','F','JPhillips129.jpg'),
 (119, 'Alan', 'Alan', 'Anthony', 'Silvestri', 'Male', 'alan_silvestri.jpg'),
 (131, 'Ridley', 'Ridley', '', 'Scott', 'Male', 'Ridley_Scott.jpg'),
 (132, 'John', 'John', '', 'Logan', 'Male', 'john_logan.jpg'),
@@ -1348,13 +1382,13 @@ CREATE TABLE `songs` (
 --
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
-(1, 'Soundtrack Suite', 'none', ''),
+(1, 'Soundtrack Suite', NULL, ''),
 (811, 'Her Eyes', NULL, ''),
 (91, 'I\'m a Belie', NULL, ''),
 (101, 'Pumpkin and Honey Bunny/Misirlou', NULL, ''),
 (102, 'Jungle Boogie', NULL, ''),
 (111, 'I\'m Forrest', NULL, ''),
-(131, 'Now we are free', NULL, '');
+(120,'Main Title', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1382,7 +1416,17 @@ INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (102, 'Jazz'),
 (111, 'Heartwarming'),
 (111, 'Sad'),
-(113, 'free');
+(113, 'free'),
+(120,'Main'),
+(121,'God'),
+(122,'Cab'),
+(123,'Sleep'),
+(124,'Phone'),
+(125,'Magnum'),
+(126,'Shape'),
+(127,'Iris'),
+(128,'Bill'),
+(129,'Assassination');
 
 -- --------------------------------------------------------
 
@@ -1407,7 +1451,17 @@ INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) V
 (91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
 (102, 'https://www.youtube.com/watch?v=QGKiC2suCHQ', 'Video', 102),
 (111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111),
-(113,'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video',131);
+(113,'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video',131),
+(120,'https://www.youtube.com/watch?v=UCVaU-R2Qes&list=PLE3A2E610E77911BE','audio',120),
+(121,'https://www.youtube.com/watch?v=u4jEymilyF0&list=PLE3A2E610E77911BE&index=2','audio',121),
+(122,'https://www.youtube.com/watch?v=axzAska686o&list=PLE3A2E610E77911BE&index=3','audio',122),
+(123,'https://www.youtube.com/watch?v=U4d3bJYDS0Y&list=PLE3A2E610E77911BE&index=4','audio',123),
+(124,'https://www.youtube.com/watch?v=HI31d2-mPzI&list=PLE3A2E610E77911BE&index=5','audio',124),
+(125,'https://www.youtube.com/watch?v=2e-IV2aquIs&list=PLE3A2E610E77911BE&index=6','audio',125),
+(126,'https://www.youtube.com/watch?v=QZ9DmWASJFs&list=RDQZ9DmWASJFs&start_radio=1&t=26','audio',126),
+(127,'https://www.youtube.com/watch?v=sn1N_Pp1xmw','audio',127),
+(128,'https://www.youtube.com/watch?v=xizbq7lKTVQ','audio',128),
+(129,'https://www.youtube.com/watch?v=sv8ZYCwgssI','audio',129);
 
 -- --------------------------------------------------------
 
@@ -1431,7 +1485,17 @@ INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 (91, 96, 'Composer'),
 (102, 105, 'Bass'),
 (102, 106, 'Tenor Saxophone'),
-(111, 119, 'Composer');
+(111, 119, 'Composer'),
+(120,126,'Composer'),
+(121,126,'Composer'),
+(122,126,'Composer'),
+(123,126,'Composer'),
+(124,126,'Composer'),
+(125,126,'Composer'),
+(126,126,'Composer'),
+(127,126,'Composer'),
+(128,126,'Composer'),
+(129,126,'Composer');
 
 -- --------------------------------------------------------
 
