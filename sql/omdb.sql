@@ -51,7 +51,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (7, 'Godfather, The', 'Godfather, The', 1972),
 (8, 'El secreto de sus ojos', 'The secret in their eyes', 2009),
 (9, 'Shrek', 'Shrek', 2001),
-(10, 'Seven Samurai', 'Seven Samurai', 1954),
+(10, 'Pulp Fiction', 'Pulp Fiction', 1994),
 (11, 'Forrest Gump', 'Forrest Gump', 1994),
 (12, 'Singin\' in the Rain', 'Singin\' in the Rain', 1952),
 (13, 'Gladiator', 'Gladiator', 2000),
@@ -1069,6 +1069,7 @@ INSERT INTO `movie_data` (`tag_line`, `movie_id`, `language`, `country`, `genre`
 ('', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. 
 With the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
 ('', 9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
+('', 10, 'English', 'USA', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
 ('', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
 ('', 13,'English','USA','Action','Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.');
 
@@ -1099,6 +1100,9 @@ INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
 (9, 'Fairytale'),
 (9, 'Ogre'),
 (9, 'Swamp'),
+(10, 'Tarantino'),
+(10, 'Crime'),
+(10, 'Violent'),
 (11, 'amputee'),
 (11, 'based on book'),
 (11, 'vietnam war'),
@@ -1131,6 +1135,8 @@ INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`
 (811, 'https://www.youtube.com/watch?v=tH8qDFVWkkU', 'video', 8),
 (812, 'the_secret_in_their_eyes_poster.jpg', 'poster', 8),
 (91, 'https://www.youtube.com/watch?v=W37DlG1i61s', 'Video', 9),
+(101, 'https://www.youtube.com/watch?v=s7EdQ4FqbhY', 'Video', 10),
+(102, 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg', 'image', 10),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
 (112, 'forrest_gump_poster.jpg', 'poster', 11),
 (131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13);
@@ -1178,6 +1184,10 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (9, 93, 'Actor', ''),
 (9, 94, 'Actor', ''),
 (9, 95, 'Actress', ''),
+(10, 101, 'Director'),
+(10, 102, 'Lead Actor'),
+(10, 103, 'Lead Actress'),
+(10, 104, 'Lead Actor'),
 (11, 111, 'Director', ''),
 (11, 112, 'Novel Writer', ''),
 (11, 113, 'Screenplay', ''),
@@ -1223,6 +1233,8 @@ INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
 (2, 1),
 (8, 811),
 (9, 91),
+(10, 101),
+(10, 102),
 (11, 111);
 
 -- --------------------------------------------------------
@@ -1242,6 +1254,7 @@ CREATE TABLE `movie_trivia` (
 --
 
 INSERT INTO `movie_trivia` (`movie_id`, `movie_trivia_id`, `movie_trivia_name`) VALUES
+(10, 'Pulp Fiction only cost $8 million to make.'),
 (11, 111, 'Forrest Gump is based on a novel.');
 
 -- --------------------------------------------------------
@@ -1285,6 +1298,12 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (94, 'Eddie', 'Eddie', ' ', 'Murphy', 'Male', 'Eddie_Murphy.jpg'),
 (95, 'Cameron', 'Cameron', ' ', 'Diaz', 'Female', 'Cameron_Diaz.jpg'),
 (96, 'Neil', 'Neil', ' ', 'Diamond', 'Male', 'Neil_Diamond'),
+(101, 'Quentin Tarantino', 'Quentin', '', 'Tarantino', 'Male', 'QuentinTarantino.jpg'),
+(102, 'John Travolta', 'John', '', 'Travolta', 'Male', 'JohnTravolta.jpg'),
+(103, 'Uma Thurman', 'Uma', '', 'Thurman', 'Female', 'UmaThurman.jpg'),
+(104, 'Samuel L. Jackson', 'Samuel', 'Leroy', 'Jackson', 'Male', 'SamuelLJackson.jpg'),
+(105, 'Robert "Kool" Bell', 'Robert', 'Earl', 'Bell', 'Male', 'RobertBell.jpg'),
+(106, 'Ronald Bell', 'Ronald', 'Nathan', 'Bell', 'Male', 'RonaldBell.jpg'),
 (111, 'Robert', 'Robert', '', 'Zemeckis', 'Male', 'robert_zemeckis.jpg'),
 (112, 'Winston', 'Winston', '', 'Groom', 'Male', 'winston_groom.jpg'),
 (113, 'Eric', 'Eric', '', 'Roth', 'Male', 'eric_roth.jpg'),
@@ -1333,6 +1352,8 @@ INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (1, 'Soundtrack Suite', 'none', ''),
 (811, 'Her Eyes', NULL, ''),
 (91, 'I\'m a Belie', NULL, ''),
+(101, 'Pumpkin and Honey Bunny/Misirlou', NULL),
+(102, 'Jungle Boogie', NULL),
 (111, 'I\'m Forrest', NULL, ''),
 (131, 'Now we are free', NULL, '');
 
@@ -1357,6 +1378,9 @@ INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (91, 'Energetic'),
 (91, 'Happy'),
 (91, 'Upbeat'),
+(102, 'Kool & the Gang'),
+(102, 'Wild and Peaceful'),
+(102, 'Jazz'),
 (111, 'Heartwarming'),
 (111, 'Sad'),
 (113, 'free');
@@ -1382,6 +1406,7 @@ INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) V
 (1, 'https://www.youtube.com/watch?v=Txvgd60hLPk', 'Video', 1),
 (811, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 811),
 (91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
+(102, 'https://www.youtube.com/watch?v=QGKiC2suCHQ', 'Video', 102),
 (111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111),
 (113,'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video',131);
 
@@ -1405,6 +1430,8 @@ INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 (1, 9, 'Composer'),
 (811, 815, 'Composer'),
 (91, 96, 'Composer'),
+(102, 105, 'Bass'),
+(102, 106, 'Tenor Saxophone'),
 (111, 119, 'Composer');
 
 -- --------------------------------------------------------
