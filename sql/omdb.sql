@@ -1033,8 +1033,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (989, 'Chikamatsu monogatari', 'Chikamatsu monogatari', 1954),
 (990, 'Subarnarekha', 'Subarnarekha', 1965),
 (991, 'H?xan', 'H?xan', 1922),
-(992, 'Holiday', 'Holiday', 1938);
-INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VALUES
+(992, 'Holiday', 'Holiday', 1938),
 (993, 'Diary for Timothy, A', 'Diary for Timothy, A', 1945),
 (994, 'Man Who Fell to Earth, The', 'Man Who Fell to Earth, The', 1976),
 (995, 'Loneliness of the Long Distance Runner, ', 'Loneliness of the Long Distance Runner, ', 1962),
@@ -1184,10 +1183,10 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (9, 93, 'Actor', ''),
 (9, 94, 'Actor', ''),
 (9, 95, 'Actress', ''),
-(10, 101, 'Director'),
-(10, 102, 'Lead Actor'),
-(10, 103, 'Lead Actress'),
-(10, 104, 'Lead Actor'),
+(10, 101, 'Director', ''),
+(10, 102, 'Lead Actor', ''),
+(10, 103, 'Lead Actress', ''),
+(10, 104, 'Lead Actor', ''),
 (11, 111, 'Director', ''),
 (11, 112, 'Novel Writer', ''),
 (11, 113, 'Screenplay', ''),
@@ -1254,7 +1253,7 @@ CREATE TABLE `movie_trivia` (
 --
 
 INSERT INTO `movie_trivia` (`movie_id`, `movie_trivia_id`, `movie_trivia_name`) VALUES
-(10, 'Pulp Fiction only cost $8 million to make.'),
+(10, 101, 'Pulp Fiction only cost $8 million to make.'),
 (11, 111, 'Forrest Gump is based on a novel.');
 
 -- --------------------------------------------------------
@@ -1352,8 +1351,8 @@ INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (1, 'Soundtrack Suite', 'none', ''),
 (811, 'Her Eyes', NULL, ''),
 (91, 'I\'m a Belie', NULL, ''),
-(101, 'Pumpkin and Honey Bunny/Misirlou', NULL),
-(102, 'Jungle Boogie', NULL),
+(101, 'Pumpkin and Honey Bunny/Misirlou', NULL, ''),
+(102, 'Jungle Boogie', NULL, ''),
 (111, 'I\'m Forrest', NULL, ''),
 (131, 'Now we are free', NULL, '');
 
