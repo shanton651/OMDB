@@ -1,7 +1,7 @@
 -- Queries
 
 -----------------------------------------------------------------------------
--- #49 
+-- #49 - Gina Bjork
 -- Description: List of all movies which contain the songs written by a lyricist
 -----------------------------------------------------------------------------
 SELECT movies.movie_id, movies.english_name, people.stage_name, song_people.role
