@@ -70,10 +70,15 @@ WHERE  movies.movie_id = movie_song.movie_id
 
 
 -----------------------------------------------------------------------------
--- #45 
--- Description: 
+-- #45 - Christian Duvick
+-- Description: Lists all movies where person x or person y appear (put stage
+-- names in the '')
 -----------------------------------------------------------------------------
-
+SELECT movies.native_name 
+FROM `movies`
+WHERE movie_id IN (SELECT movie_id
+                  FROM movie_people NATURAL JOIN people
+                  WHERE people.stage_name = '' OR people.stage_name = '')
 
 -----------------------------------------------------------------------------
 -- #49 - Gina Bjork
@@ -89,7 +94,17 @@ OR people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
 -- #50 
--- Description: 
+-- Description: List all movie_people who have stage name that is not null
+
+#50 
+SELECT movies.native_name, 
+       screen_name 
+FROM   movies 
+       LEFT OUTER JOIN movie_people 
+                    ON movies.movie_id = movie_people.movie_id 
+WHERE  screen_name IS NOT NULL 
+
+
 -----------------------------------------------------------------------------
 
 
