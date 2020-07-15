@@ -64,10 +64,13 @@ WHERE  movies.movie_id = movie_song.movie_id
        AND INSTR(songs.title, '') > 0; 
 
 -----------------------------------------------------------------------------
--- #44 
--- Description: 
+-- #44 Abdullahi Mohamed
+-- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
-
+SELECT song_media, Count(*) AS total
+FROM movies
+Where s_link_type= audio or s_link_type=Video
+Group by s_link_type;
 
 -----------------------------------------------------------------------------
 -- #45 - Christian Duvick
@@ -94,16 +97,34 @@ OR people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
 -- #50 
--- Description: 
------------------------------------------------------------------------------
+-- Description: List all movie_people who have stage name that is not null
+
+#50 
+SELECT movies.native_name, 
+       screen_name 
+FROM   movies 
+       LEFT OUTER JOIN movie_people 
+                    ON movies.movie_id = movie_people.movie_id 
+WHERE  screen_name IS NOT NULL 
 
 
 -----------------------------------------------------------------------------
--- #51 
--- Description: 
+
+
+-----------------------------------------------------------------------------
+-- #51 - Christopher Pellegrino
+-- Description: List of all movies where Person X is the Director and Person Y
+-- is the "Lead Actor" (stage_names are input).
 -----------------------------------------------------------------------------
 
-
+SELECT movies.movie_id, movies.native_name, people.people_id, people.stage_name, movie_people.role
+FROM (movies
+NATURAL JOIN movie_people)
+NATURAL JOIN people
+WHERE (movie_people.role = 'Director'
+AND people.stage_name = 'X')
+OR (movie_people.role = 'Lead Actor'
+AND people.stage_name = 'Y');
 
 
 
