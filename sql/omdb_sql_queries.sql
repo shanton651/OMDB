@@ -64,10 +64,13 @@ WHERE  movies.movie_id = movie_song.movie_id
        AND INSTR(songs.title, '') > 0; 
 
 -----------------------------------------------------------------------------
--- #44 
--- Description: 
+-- #44 Abdullahi Mohamed
+-- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
-
+SELECT song_media, Count(*) AS total
+FROM movies
+Where s_link_type= audio or s_link_type=Video
+Group by s_link_type;
 
 -----------------------------------------------------------------------------
 -- #45 - Christian Duvick
