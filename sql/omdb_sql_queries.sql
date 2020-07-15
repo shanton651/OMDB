@@ -114,7 +114,7 @@ WHERE  screen_name IS NOT NULL
 -- is the "Lead Actor" (stage_names are input).
 -----------------------------------------------------------------------------
 
-SELECT *
+SELECT movies.movie_id, movies.native_name, people.people_id, people.stage_name, movie_people.role
 FROM (movies
 NATURAL JOIN movie_people)
 NATURAL JOIN people
