@@ -94,7 +94,17 @@ OR people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
 -- #50 
--- Description: 
+-- Description: List all movie_people who have stage name that is not null
+
+#50 
+SELECT movies.native_name, 
+       screen_name 
+FROM   movies 
+       LEFT OUTER JOIN movie_people 
+                    ON movies.movie_id = movie_people.movie_id 
+WHERE  screen_name IS NOT NULL 
+
+
 -----------------------------------------------------------------------------
 
 
