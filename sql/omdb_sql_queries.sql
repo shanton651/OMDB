@@ -64,9 +64,10 @@ WHERE  movies.movie_id = movie_song.movie_id
        AND INSTR(songs.title, '') > 0; 
 
 -----------------------------------------------------------------------------
--- #44 Abdullahi Mohamed
+-- #44 - Abdullahi Mohamed
 -- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
+
 SELECT song_media, Count(*) AS total
 FROM movies
 Where s_link_type= audio or s_link_type=Video
@@ -77,6 +78,7 @@ Group by s_link_type;
 -- Description: Lists all movies where person x or person y appear (put stage
 -- names in the '')
 -----------------------------------------------------------------------------
+
 SELECT movies.native_name 
 FROM `movies`
 WHERE movie_id IN (SELECT movie_id
@@ -96,20 +98,16 @@ WHERE movies.english_name LIKE ""
 OR people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
--- #50 
+-- #50 - Spencer Hanton
 -- Description: List all movie_people who have stage name that is not null
+-----------------------------------------------------------------------------
 
-#50 
 SELECT movies.native_name, 
        screen_name 
 FROM   movies 
        LEFT OUTER JOIN movie_people 
                     ON movies.movie_id = movie_people.movie_id 
 WHERE  screen_name IS NOT NULL 
-
-
------------------------------------------------------------------------------
-
 
 -----------------------------------------------------------------------------
 -- #51 - Christopher Pellegrino
