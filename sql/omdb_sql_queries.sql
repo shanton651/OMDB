@@ -68,10 +68,9 @@ WHERE  movies.movie_id = movie_song.movie_id
 -- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
 
-SELECT song_media, Count(*) AS total
-FROM movies
-Where s_link_type= audio or s_link_type=Video
-Group by s_link_type;
+Select s_link_type, count(song_media.s_link) AS count
+FROM song_media
+GROUP BY s_link_type ASC;
 
 -----------------------------------------------------------------------------
 -- #45 - Christian Duvick
@@ -94,8 +93,7 @@ SELECT movies.movie_id, movies.english_name, people.stage_name, song_people.role
 FROM `movies` 
 INNER JOIN `song_people` ON song_people.song_id = movies.movie_id
 INNER JOIN people ON people.people_id = song_people.people_id
-WHERE movies.english_name LIKE ""
-OR people.stage_name LIKE "";
+WHERE people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
 -- #50 - Spencer Hanton
