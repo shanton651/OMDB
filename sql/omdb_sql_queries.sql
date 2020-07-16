@@ -64,13 +64,13 @@ WHERE  movies.movie_id = movie_song.movie_id
        AND INSTR(songs.title, '') > 0; 
 
 -----------------------------------------------------------------------------
--- #44 Abdullahi Mohamed
+-- #44 - Abdullahi Mohamed
 -- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
 
-SELECT `s_link_type`, Count(*) AS `total`
-FROM `song_media`
-GROUP BY `s_link_type`;
+Select s_link_type, count(song_media.s_link) AS count
+FROM song_media
+GROUP BY s_link_type ASC;
 
 -----------------------------------------------------------------------------
 -- #45 - Christian Duvick
@@ -93,8 +93,7 @@ SELECT movies.movie_id, movies.english_name, people.stage_name, song_people.role
 FROM `movies` 
 INNER JOIN `song_people` ON song_people.song_id = movies.movie_id
 INNER JOIN people ON people.people_id = song_people.people_id
-WHERE movies.english_name LIKE ""
-OR people.stage_name LIKE "";
+WHERE people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
 -- #50 - Spencer Hanton
@@ -107,9 +106,6 @@ FROM   movies
        LEFT OUTER JOIN movie_people 
                     ON movies.movie_id = movie_people.movie_id 
 WHERE  screen_name IS NOT NULL 
-
-
------------------------------------------------------------------------------
 
 -----------------------------------------------------------------------------
 -- #51 - Christopher Pellegrino
@@ -125,7 +121,6 @@ WHERE (movie_people.role = 'Director'
 AND people.stage_name = 'X')
 OR (movie_people.role = 'Lead Actor'
 AND people.stage_name = 'Y');
-
 
 
 
