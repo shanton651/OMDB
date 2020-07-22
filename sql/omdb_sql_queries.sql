@@ -64,16 +64,20 @@ WHERE  movies.movie_id = movie_song.movie_id
        AND INSTR(songs.title, '') > 0; 
 
 -----------------------------------------------------------------------------
--- #44 
--- Description: 
+-- #44 - Abdullahi Mohamed
+-- Description: Counts the amount of audio and video
 -----------------------------------------------------------------------------
 
+Select s_link_type, count(song_media.s_link) AS count
+FROM song_media
+GROUP BY s_link_type ASC;
 
 -----------------------------------------------------------------------------
 -- #45 - Christian Duvick
 -- Description: Lists all movies where person x or person y appear (put stage
 -- names in the '')
 -----------------------------------------------------------------------------
+
 SELECT movies.native_name 
 FROM `movies`
 WHERE movie_id IN (SELECT movie_id
@@ -89,14 +93,13 @@ SELECT movies.movie_id, movies.english_name, people.stage_name, song_people.role
 FROM `movies` 
 INNER JOIN `song_people` ON song_people.song_id = movies.movie_id
 INNER JOIN people ON people.people_id = song_people.people_id
-WHERE movies.english_name LIKE ""
-OR people.stage_name LIKE "";
+WHERE people.stage_name LIKE "";
 
 -----------------------------------------------------------------------------
--- #50 
+-- #50 - Spencer Hanton
 -- Description: List all movie_people who have stage name that is not null
+-----------------------------------------------------------------------------
 
-#50 
 SELECT movies.native_name, 
        screen_name 
 FROM   movies 
@@ -104,17 +107,13 @@ FROM   movies
                     ON movies.movie_id = movie_people.movie_id 
 WHERE  screen_name IS NOT NULL 
 
-
------------------------------------------------------------------------------
-
-
 -----------------------------------------------------------------------------
 -- #51 - Christopher Pellegrino
 -- Description: List of all movies where Person X is the Director and Person Y
 -- is the "Lead Actor" (stage_names are input).
 -----------------------------------------------------------------------------
 
-SELECT *
+SELECT movies.movie_id, movies.native_name, people.people_id, people.stage_name, movie_people.role
 FROM (movies
 NATURAL JOIN movie_people)
 NATURAL JOIN people
@@ -122,7 +121,6 @@ WHERE (movie_people.role = 'Director'
 AND people.stage_name = 'X')
 OR (movie_people.role = 'Lead Actor'
 AND people.stage_name = 'Y');
-
 
 
 
