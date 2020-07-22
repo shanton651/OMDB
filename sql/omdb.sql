@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 07, 2020 at 02:59 AM
--- Server version: 10.3.16-MariaDB
--- PHP Version: 7.3.7
+-- Generation Time: Jul 16, 2020 at 03:34 AM
+-- Server version: 10.4.11-MariaDB
+-- PHP Version: 7.3.17
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -53,7 +52,7 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (9, 'Shrek', 'Shrek', 2001),
 (10, 'Pulp Fiction', 'Pulp Fiction', 1994),
 (11, 'Forrest Gump', 'Forrest Gump', 1994),
-(12,'Taxi Driver','Taxi driver', 1976),
+(12, 'Taxi Driver', 'Taxi driver', 1976),
 (13, 'Gladiator', 'Gladiator', 2000),
 (14, 'Taxi Driver', 'Taxi Driver', 1976),
 (15, 'Battleship Potemkin', 'Battleship Potemkin', 1925),
@@ -1034,7 +1033,8 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (990, 'Subarnarekha', 'Subarnarekha', 1965),
 (991, 'H?xan', 'H?xan', 1922),
 (992, 'Holiday', 'Holiday', 1938),
-(993, 'Diary for Timothy, A', 'Diary for Timothy, A', 1945),
+(993, 'Diary for Timothy, A', 'Diary for Timothy, A', 1945);
+INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VALUES
 (994, 'Man Who Fell to Earth, The', 'Man Who Fell to Earth, The', 1976),
 (995, 'Loneliness of the Long Distance Runner, ', 'Loneliness of the Long Distance Runner, ', 1962),
 (996, 'Outer Space', 'Outer Space', 1999),
@@ -1043,6 +1043,17 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (999, 'Design for Living', 'Design for Living', 1933),
 (1000, 'Fat Girl', 'Fat Girl', 2001),
 (2000, '2000_native', '2000_english', 2000);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_anagrams`
+--
+
+CREATE TABLE `movie_anagrams` (
+  `movie_id` int(6) NOT NULL COMMENT 'movie_anagrams is a WEAK entity. movie_id is both PK and FK',
+  `anagram` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'anagram of native name'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1065,13 +1076,12 @@ CREATE TABLE `movie_data` (
 
 INSERT INTO `movie_data` (`tag_line`, `movie_id`, `language`, `country`, `genre`, `plot`) VALUES
 ('', 2, 'English', 'United States', 'mystery', 'A former police detective juggles wrestling with his personal demons and becoming obsessed with a hauntingly beautiful woman.'),
-('', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. 
-With the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
+('', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. \r\nWith the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
 ('', 9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 ('', 10, 'English', 'USA', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
 ('', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
-('', 12, 'english','United States','Noir','A Taxi Driver explores New York'),
-('', 13,'English','USA','Action','Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.');
+('', 12, 'english', 'United States', 'Noir', 'A Taxi Driver explores New York'),
+('', 13, 'English', 'USA', 'Action', 'Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.');
 
 -- --------------------------------------------------------
 
@@ -1094,24 +1104,24 @@ INSERT INTO `movie_keywords` (`movie_id`, `keyword`) VALUES
 (2, 'Hitchcock'),
 (2, 'romantic obsess'),
 (8, 'drama'),
-(8, 'novel'),
 (8, 'mistery'),
+(8, 'novel'),
 (9, 'Animation'),
 (9, 'Fairytale'),
 (9, 'Ogre'),
 (9, 'Swamp'),
-(10, 'Tarantino'),
 (10, 'Crime'),
+(10, 'Tarantino'),
 (10, 'Violent'),
 (11, 'amputee'),
 (11, 'based on book'),
 (11, 'vietnam war'),
-(12,'taxi'),
-(12,'Violent'),
-(12,'New York'),
-(13, 'Rome'),
+(12, 'New York'),
+(12, 'taxi'),
+(12, 'Violent'),
+(13, 'Family'),
 (13, 'Freedom'),
-(13, 'Family');
+(13, 'Rome');
 
 -- --------------------------------------------------------
 
@@ -1131,19 +1141,35 @@ CREATE TABLE `movie_media` (
 --
 
 INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) VALUES
-(10021, 'Vertigomovie_restoration.jpg', 'poster', 2),
-(10022, 'vertigo_poster2.jpg', 'poster', 2),
-(10023, 'vertigo_poster3.jpg', 'poster', 2),
-(10024, 'https://www.youtube.com/watch?v=O888bu0QrMg', 'video', 2),
-(811, 'https://www.youtube.com/watch?v=tH8qDFVWkkU', 'video', 8),
-(812, 'the_secret_in_their_eyes_poster.jpg', 'poster', 8),
+(12, 'https://www.originalfilmart.com/products/taxi-driver-1976-linen', 'Poster', 12),
 (91, 'https://www.youtube.com/watch?v=W37DlG1i61s', 'Video', 9),
 (101, 'https://www.youtube.com/watch?v=s7EdQ4FqbhY', 'Video', 10),
 (102, 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg', 'image', 10),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
 (112, 'forrest_gump_poster.jpg', 'poster', 11),
-(12,'https://www.originalfilmart.com/products/taxi-driver-1976-linen','Poster',12),
-(131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13);
+(131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13),
+(811, 'https://www.youtube.com/watch?v=tH8qDFVWkkU', 'video', 8),
+(812, 'the_secret_in_their_eyes_poster.jpg', 'poster', 8),
+(10021, 'Vertigomovie_restoration.jpg', 'poster', 2),
+(10022, 'vertigo_poster2.jpg', 'poster', 2),
+(10023, 'vertigo_poster3.jpg', 'poster', 2),
+(10024, 'https://www.youtube.com/watch?v=O888bu0QrMg', 'video', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `movie_numbers`
+--
+
+CREATE TABLE `movie_numbers` (
+  `movie_id` int(6) NOT NULL COMMENT 'This is both PK and FK; movie_numbers is a WEAK entity',
+  `running_time` int(3) DEFAULT NULL COMMENT 'Running Time in Minutes',
+  `length` int(2) DEFAULT NULL COMMENT 'length (depends on the native_name)',
+  `strength` int(2) DEFAULT NULL COMMENT 'strengh (depends on the native_name)',
+  `weight` int(2) DEFAULT NULL COMMENT 'weight (depends on native name)',
+  `budget` int(8) DEFAULT NULL COMMENT 'budget in local (native) currency',
+  `box_office` int(8) DEFAULT NULL COMMENT 'box office numbers in local (native) currency'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -1163,6 +1189,12 @@ CREATE TABLE `movie_people` (
 --
 
 INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALUES
+(1, 1, 'Director', ''),
+(1, 1, 'Supporting Acto', ''),
+(1, 2, 'Director', ''),
+(1, 3, 'Producer', ''),
+(1, 4, 'Lead Actress', ''),
+(1, 5, 'Lead Actor', ''),
 (2, 1, 'Director', ''),
 (2, 1, 'Producer', ''),
 (2, 2, 'Lead Actor', ''),
@@ -1173,12 +1205,6 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (2, 7, 'Lead Actress', ''),
 (2, 8, 'Lead Actress', ''),
 (2, 9, 'Music Composer', ''),
-(1, 1, 'Director', ''),
-(1, 1, 'Supporting Acto', ''),
-(1, 2, 'Director', ''),
-(1, 3, 'Producer', ''),
-(1, 4, 'Lead Actress', ''),
-(1, 5, 'Lead Actor', ''),
 (8, 811, 'Director', ''),
 (8, 812, 'Novel Writer', ''),
 (8, 813, 'Actor', ''),
@@ -1200,15 +1226,15 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (11, 116, 'Actress', ''),
 (11, 117, 'Actor', ''),
 (11, 118, 'Actor', ''),
-(12,121,'Main Actor','Travis Bickle'),
-(12,122,'Main Actress','Iris'),
-(12,123,'Supporting Actor','Tom'),
-(12,124,'Supporting Actor','Sport'),
-(12,125,'Supporting Actor','Charles Palantine'),
-(12,126,'Composer',null),
-(12,127,'Supporting Actress','Betsy'),
-(12,128,'Director',''),
-(12,129,'Producer',''),
+(12, 121, 'Main Actor', 'Travis Bickle'),
+(12, 122, 'Main Actress', 'Iris'),
+(12, 123, 'Supporting Acto', 'Tom'),
+(12, 124, 'Supporting Acto', 'Sport'),
+(12, 125, 'Supporting Acto', 'Charles Palantine'),
+(12, 126, 'Composer', ''),
+(12, 127, 'Supporting Actr', 'Betsy'),
+(12, 128, 'Director', ''),
+(12, 129, 'Producer', ''),
 (13, 131, 'Director', ''),
 (13, 132, 'Screenplay', ''),
 (13, 133, 'Actor', ''),
@@ -1249,16 +1275,16 @@ INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
 (10, 101),
 (10, 102),
 (11, 111),
-(12,120),
-(12,121),
-(12,122),
-(12,123),
-(12,124),
-(12,125),
-(12,126),
-(12,127),
-(12,128),
-(12,129);
+(12, 120),
+(12, 121),
+(12, 122),
+(12, 123),
+(12, 124),
+(12, 125),
+(12, 126),
+(12, 127),
+(12, 128),
+(12, 129);
 
 -- --------------------------------------------------------
 
@@ -1311,11 +1337,6 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (7, 'Raymond Bailey', 'Raymond', 'A', 'Bailey', 'male', 'image file name'),
 (8, 'Ellen Corby', 'Ellen', 'A', 'Corby', 'female', 'image file name'),
 (9, 'Bernard Hermann', 'Bernard', 'A', 'Hermann', 'male', 'image file name'),
-(811, 'Juan José Campanella', 'Juan', 'José', 'Campanella', 'Male', 'juan_jose_campanella.jpg'),
-(812, 'Eduardo Sacheri', 'Eduardo', '', 'Sacheri', 'Male', 'eduardo_sacheri.jpg'),
-(813, 'Ricardo Darín', 'Ricardo', '', 'Darín', 'Male', 'ricardo_darin.jpg'),
-(814, 'Soledad Villamil', 'Soledad', '', 'Villamil', 'Female', 'soledad.jpg'),
-(815, 'Emilio Kauderer', 'Emilio', '', 'Kauderer', 'Male', 'Emilio_Kauderer.jpg'),
 (91, 'Andrew', 'Andrew', ' ', 'Adamson', 'Male', 'Andrew_Adamson.jpg'),
 (92, 'Vicky', 'Vicky', ' ', 'Jenson', 'Female', 'Vicky_Jenson.jpg'),
 (93, 'Mike', 'Mike', ' ', 'Myers', 'Male', 'Mike_Myers.jpg'),
@@ -1326,7 +1347,7 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (102, 'John Travolta', 'John', '', 'Travolta', 'Male', 'JohnTravolta.jpg'),
 (103, 'Uma Thurman', 'Uma', '', 'Thurman', 'Female', 'UmaThurman.jpg'),
 (104, 'Samuel L. Jackson', 'Samuel', 'Leroy', 'Jackson', 'Male', 'SamuelLJackson.jpg'),
-(105, 'Robert "Kool" Bell', 'Robert', 'Earl', 'Bell', 'Male', 'RobertBell.jpg'),
+(105, 'Robert \"Kool\" Bell', 'Robert', 'Earl', 'Bell', 'Male', 'RobertBell.jpg'),
 (106, 'Ronald Bell', 'Ronald', 'Nathan', 'Bell', 'Male', 'RonaldBell.jpg'),
 (111, 'Robert', 'Robert', '', 'Zemeckis', 'Male', 'robert_zemeckis.jpg'),
 (112, 'Winston', 'Winston', '', 'Groom', 'Male', 'winston_groom.jpg'),
@@ -1336,21 +1357,26 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (116, 'Sally Field', 'Sally', 'Margaret', 'Field', 'Female', 'sally_field.jpg'),
 (117, 'Michael', 'Michael', 'Conner', 'Humphreys', 'Male', 'michael_humphreys.jpg'),
 (118, 'Harold', 'Harold', 'G', 'Herthum', 'Male', 'harold_herthum.jpg'),
-(121,'Travis Bickle','Robert','','De Niro','M','RDeniro121.jpg'),
-(122,'Iris','Jodie','','Foster','F','JFoster122.jpg'),
-(123,'Tom','Albert','','Brooks','M','ABrooks123.jpg'),
-(124,'Sport','Harvey','','Keitel','M','HKeitel124.jpg'),
-(125,'Charles Palantine','Leonard','','Harris','M','LHarris125.jpg'),
-(126,'Composer','Bernard','','Hermann','M','BHermann126.jpg'),
-(127,'Betsy','Cybill','','Shepherd','F','CShepherd127.jpg'),
-(128,'DIRECTOR','Martin','','Scorsese','M','MScorsese128.jpg'),
-(129,'PRODUCER','Julia','','Phillips','F','JPhillips129.jpg'),
 (119, 'Alan', 'Alan', 'Anthony', 'Silvestri', 'Male', 'alan_silvestri.jpg'),
+(121, 'Travis Bickle', 'Robert', '', 'De Niro', 'M', 'RDeniro121.jpg'),
+(122, 'Iris', 'Jodie', '', 'Foster', 'F', 'JFoster122.jpg'),
+(123, 'Tom', 'Albert', '', 'Brooks', 'M', 'ABrooks123.jpg'),
+(124, 'Sport', 'Harvey', '', 'Keitel', 'M', 'HKeitel124.jpg'),
+(125, 'Charles Palantine', 'Leonard', '', 'Harris', 'M', 'LHarris125.jpg'),
+(126, 'Composer', 'Bernard', '', 'Hermann', 'M', 'BHermann126.jpg'),
+(127, 'Betsy', 'Cybill', '', 'Shepherd', 'F', 'CShepherd127.jpg'),
+(128, 'DIRECTOR', 'Martin', '', 'Scorsese', 'M', 'MScorsese128.jpg'),
+(129, 'PRODUCER', 'Julia', '', 'Phillips', 'F', 'JPhillips129.jpg'),
 (131, 'Ridley', 'Ridley', '', 'Scott', 'Male', 'Ridley_Scott.jpg'),
 (132, 'John', 'John', '', 'Logan', 'Male', 'john_logan.jpg'),
 (133, 'Russel', 'Russel', 'Crowe', '', 'Male', 'Russel_crowe'),
 (135, 'Connie Nelson', 'Connie', '', 'Connie', 'Female', 'Connie_Nelson.jpg'),
-(136, 'Joaquin Phoenix', '', '', '', 'male', 'Joaquin_Phoenix.jpg');
+(136, 'Joaquin Phoenix', '', '', '', 'male', 'Joaquin_Phoenix.jpg'),
+(811, 'Juan José Campanella', 'Juan', 'José', 'Campanella', 'Male', 'juan_jose_campanella.jpg'),
+(812, 'Eduardo Sacheri', 'Eduardo', '', 'Sacheri', 'Male', 'eduardo_sacheri.jpg'),
+(813, 'Ricardo Darín', 'Ricardo', '', 'Darín', 'Male', 'ricardo_darin.jpg'),
+(814, 'Soledad Villamil', 'Soledad', '', 'Villamil', 'Female', 'soledad.jpg'),
+(815, 'Emilio Kauderer', 'Emilio', '', 'Kauderer', 'Male', 'Emilio_Kauderer.jpg');
 
 -- --------------------------------------------------------
 
@@ -1383,12 +1409,12 @@ CREATE TABLE `songs` (
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (1, 'Soundtrack Suite', NULL, ''),
-(811, 'Her Eyes', NULL, ''),
 (91, 'I\'m a Belie', NULL, ''),
-(101, 'Pumpkin and Honey Bunny/Misirlou', NULL, ''),
+(101, 'Pumpkin and Honey Bu', NULL, ''),
 (102, 'Jungle Boogie', NULL, ''),
 (111, 'I\'m Forrest', NULL, ''),
-(120,'Main Title', NULL, '');
+(120, 'Main Title', NULL, ''),
+(811, 'Her Eyes', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1407,26 +1433,26 @@ CREATE TABLE `song_keywords` (
 
 INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (1, 'orchestra'),
-(811, 'Sad'),
 (91, 'Energetic'),
 (91, 'Happy'),
 (91, 'Upbeat'),
-(102, 'Kool & the Gang'),
-(102, 'Wild and Peaceful'),
 (102, 'Jazz'),
+(102, 'Kool & the Gang'),
+(102, 'Wild and Peacef'),
 (111, 'Heartwarming'),
 (111, 'Sad'),
 (113, 'free'),
-(120,'Main'),
-(121,'God'),
-(122,'Cab'),
-(123,'Sleep'),
-(124,'Phone'),
-(125,'Magnum'),
-(126,'Shape'),
-(127,'Iris'),
-(128,'Bill'),
-(129,'Assassination');
+(120, 'Main'),
+(121, 'God'),
+(122, 'Cab'),
+(123, 'Sleep'),
+(124, 'Phone'),
+(125, 'Magnum'),
+(126, 'Shape'),
+(127, 'Iris'),
+(128, 'Bill'),
+(129, 'Assassination'),
+(811, 'Sad');
 
 -- --------------------------------------------------------
 
@@ -1447,21 +1473,21 @@ CREATE TABLE `song_media` (
 
 INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
 (1, 'https://www.youtube.com/watch?v=Txvgd60hLPk', 'Video', 1),
-(811, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 811),
 (91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
 (102, 'https://www.youtube.com/watch?v=QGKiC2suCHQ', 'Video', 102),
 (111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111),
-(113,'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video',131),
-(120,'https://www.youtube.com/watch?v=UCVaU-R2Qes&list=PLE3A2E610E77911BE','audio',120),
-(121,'https://www.youtube.com/watch?v=u4jEymilyF0&list=PLE3A2E610E77911BE&index=2','audio',121),
-(122,'https://www.youtube.com/watch?v=axzAska686o&list=PLE3A2E610E77911BE&index=3','audio',122),
-(123,'https://www.youtube.com/watch?v=U4d3bJYDS0Y&list=PLE3A2E610E77911BE&index=4','audio',123),
-(124,'https://www.youtube.com/watch?v=HI31d2-mPzI&list=PLE3A2E610E77911BE&index=5','audio',124),
-(125,'https://www.youtube.com/watch?v=2e-IV2aquIs&list=PLE3A2E610E77911BE&index=6','audio',125),
-(126,'https://www.youtube.com/watch?v=QZ9DmWASJFs&list=RDQZ9DmWASJFs&start_radio=1&t=26','audio',126),
-(127,'https://www.youtube.com/watch?v=sn1N_Pp1xmw','audio',127),
-(128,'https://www.youtube.com/watch?v=xizbq7lKTVQ','audio',128),
-(129,'https://www.youtube.com/watch?v=sv8ZYCwgssI','audio',129);
+(113, 'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video', 131),
+(120, 'https://www.youtube.com/watch?v=UCVaU-R2Qes&list=PLE3A2E610E77911BE', 'audio', 120),
+(121, 'https://www.youtube.com/watch?v=u4jEymilyF0&list=PLE3A2E610E77911BE&index=2', 'audio', 121),
+(122, 'https://www.youtube.com/watch?v=axzAska686o&list=PLE3A2E610E77911BE&index=3', 'audio', 122),
+(123, 'https://www.youtube.com/watch?v=U4d3bJYDS0Y&list=PLE3A2E610E77911BE&index=4', 'audio', 123),
+(124, 'https://www.youtube.com/watch?v=HI31d2-mPzI&list=PLE3A2E610E77911BE&index=5', 'audio', 124),
+(125, 'https://www.youtube.com/watch?v=2e-IV2aquIs&list=PLE3A2E610E77911BE&index=6', 'audio', 125),
+(126, 'https://www.youtube.com/watch?v=QZ9DmWASJFs&list=RDQZ9DmWASJFs&start_radio=1&t=26', 'audio', 126),
+(127, 'https://www.youtube.com/watch?v=sn1N_Pp1xmw', 'audio', 127),
+(128, 'https://www.youtube.com/watch?v=xizbq7lKTVQ', 'audio', 128),
+(129, 'https://www.youtube.com/watch?v=sv8ZYCwgssI', 'audio', 129),
+(811, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 811);
 
 -- --------------------------------------------------------
 
@@ -1481,21 +1507,21 @@ CREATE TABLE `song_people` (
 
 INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 (1, 9, 'Composer'),
-(811, 815, 'Composer'),
 (91, 96, 'Composer'),
 (102, 105, 'Bass'),
 (102, 106, 'Tenor Saxophone'),
 (111, 119, 'Composer'),
-(120,126,'Composer'),
-(121,126,'Composer'),
-(122,126,'Composer'),
-(123,126,'Composer'),
-(124,126,'Composer'),
-(125,126,'Composer'),
-(126,126,'Composer'),
-(127,126,'Composer'),
-(128,126,'Composer'),
-(129,126,'Composer');
+(120, 126, 'Composer'),
+(121, 126, 'Composer'),
+(122, 126, 'Composer'),
+(123, 126, 'Composer'),
+(124, 126, 'Composer'),
+(125, 126, 'Composer'),
+(126, 126, 'Composer'),
+(127, 126, 'Composer'),
+(128, 126, 'Composer'),
+(129, 126, 'Composer'),
+(811, 815, 'Composer');
 
 -- --------------------------------------------------------
 
@@ -1520,6 +1546,12 @@ ALTER TABLE `movies`
   ADD PRIMARY KEY (`movie_id`);
 
 --
+-- Indexes for table `movie_anagrams`
+--
+ALTER TABLE `movie_anagrams`
+  ADD PRIMARY KEY (`movie_id`,`anagram`);
+
+--
 -- Indexes for table `movie_data`
 --
 ALTER TABLE `movie_data`
@@ -1536,6 +1568,12 @@ ALTER TABLE `movie_keywords`
 --
 ALTER TABLE `movie_media`
   ADD PRIMARY KEY (`movie_media_id`);
+
+--
+-- Indexes for table `movie_numbers`
+--
+ALTER TABLE `movie_numbers`
+  ADD PRIMARY KEY (`movie_id`);
 
 --
 -- Indexes for table `movie_people`
