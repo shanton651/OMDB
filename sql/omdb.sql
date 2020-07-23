@@ -1033,16 +1033,14 @@ INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VA
 (990, 'Subarnarekha', 'Subarnarekha', 1965),
 (991, 'H?xan', 'H?xan', 1922),
 (992, 'Holiday', 'Holiday', 1938),
-(993, 'Diary for Timothy, A', 'Diary for Timothy, A', 1945);
-INSERT INTO `movies` (`movie_id`, `native_name`, `english_name`, `year_made`) VALUES
+(993, 'Diary for Timothy, A', 'Diary for Timothy, A', 1945),
 (994, 'Man Who Fell to Earth, The', 'Man Who Fell to Earth, The', 1976),
 (995, 'Loneliness of the Long Distance Runner, ', 'Loneliness of the Long Distance Runner, ', 1962),
 (996, 'Outer Space', 'Outer Space', 1999),
 (997, 'Boucher, Le', 'Boucher, Le', 1970),
 (998, 'Too Early, Too Late', 'Too Early, Too Late', 1981),
 (999, 'Design for Living', 'Design for Living', 1933),
-(1000, 'Fat Girl', 'Fat Girl', 2001),
-(2000, '2000_native', '2000_english', 2000);
+(1000, 'Fat Girl', 'Fat Girl', 2001);
 
 -- --------------------------------------------------------
 
@@ -1141,19 +1139,20 @@ CREATE TABLE `movie_media` (
 --
 
 INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) VALUES
-(12, 'https://www.originalfilmart.com/products/taxi-driver-1976-linen', 'Poster', 12),
+
+(21, 'Vertigomovie_restoration.jpg', 'poster', 2),
+(22, 'vertigo_poster2.jpg', 'poster', 2),
+(23, 'vertigo_poster3.jpg', 'poster', 2),
+(24, 'https://www.youtube.com/watch?v=O888bu0QrMg', 'video', 2),
+(81, 'https://www.youtube.com/watch?v=tH8qDFVWkkU', 'video', 8),
+(82, 'the_secret_in_their_eyes_poster.jpg', 'poster', 8),
 (91, 'https://www.youtube.com/watch?v=W37DlG1i61s', 'Video', 9),
 (101, 'https://www.youtube.com/watch?v=s7EdQ4FqbhY', 'Video', 10),
-(102, 'https://upload.wikimedia.org/wikipedia/en/3/3b/Pulp_Fiction_%281994%29_poster.jpg', 'image', 10),
+(102, 'Pulp_Fiction_poster.jpg', 'image', 10),
 (111, 'https://www.youtube.com/watch?v=bLvqoHBptjg', 'video', 11),
 (112, 'forrest_gump_poster.jpg', 'poster', 11),
-(131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13),
-(811, 'https://www.youtube.com/watch?v=tH8qDFVWkkU', 'video', 8),
-(812, 'the_secret_in_their_eyes_poster.jpg', 'poster', 8),
-(10021, 'Vertigomovie_restoration.jpg', 'poster', 2),
-(10022, 'vertigo_poster2.jpg', 'poster', 2),
-(10023, 'vertigo_poster3.jpg', 'poster', 2),
-(10024, 'https://www.youtube.com/watch?v=O888bu0QrMg', 'video', 2);
+(121, 'taxi_driver_poster.jpg', 'poster', 12),
+(131, 'https://www.youtube.com/watch?v=uvbavW31adA', 'video', 13);
 
 -- --------------------------------------------------------
 
@@ -1189,26 +1188,10 @@ CREATE TABLE `movie_people` (
 --
 
 INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALUES
-(1, 1, 'Director', ''),
-(1, 1, 'Supporting Acto', ''),
-(1, 2, 'Director', ''),
-(1, 3, 'Producer', ''),
-(1, 4, 'Lead Actress', ''),
-(1, 5, 'Lead Actor', ''),
-(2, 1, 'Director', ''),
-(2, 1, 'Producer', ''),
-(2, 2, 'Lead Actor', ''),
-(2, 3, 'Lead Actress', ''),
-(2, 4, 'Lead Actress', ''),
-(2, 5, 'Lead Actor', ''),
-(2, 6, 'Lead Actor', ''),
-(2, 7, 'Lead Actress', ''),
-(2, 8, 'Lead Actress', ''),
-(2, 9, 'Music Composer', ''),
-(8, 811, 'Director', ''),
-(8, 812, 'Novel Writer', ''),
-(8, 813, 'Actor', ''),
-(8, 814, 'Actress', ''),
+(8, 81, 'Director', ''),
+(8, 82, 'Novel Writer', ''),
+(8, 83, 'Actor', ''),
+(8, 84, 'Actress', ''),
 (9, 91, 'Director', ''),
 (9, 92, 'Director', ''),
 (9, 93, 'Actor', ''),
@@ -1238,7 +1221,6 @@ INSERT INTO `movie_people` (`movie_id`, `people_id`, `role`, `screen_name`) VALU
 (13, 131, 'Director', ''),
 (13, 132, 'Screenplay', ''),
 (13, 133, 'Actor', ''),
-(13, 134, 'Actress', ''),
 (13, 135, 'Actor', '');
 
 -- --------------------------------------------------------
@@ -1270,7 +1252,7 @@ CREATE TABLE `movie_song` (
 
 INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
 (2, 1),
-(8, 811),
+(8, 81),
 (9, 91),
 (10, 101),
 (10, 102),
@@ -1284,7 +1266,8 @@ INSERT INTO `movie_song` (`movie_id`, `song_id`) VALUES
 (12, 126),
 (12, 127),
 (12, 128),
-(12, 129);
+(12, 129),
+(13, 131);
 
 -- --------------------------------------------------------
 
@@ -1337,6 +1320,11 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (7, 'Raymond Bailey', 'Raymond', 'A', 'Bailey', 'male', 'image file name'),
 (8, 'Ellen Corby', 'Ellen', 'A', 'Corby', 'female', 'image file name'),
 (9, 'Bernard Hermann', 'Bernard', 'A', 'Hermann', 'male', 'image file name'),
+(81, 'Juan José Campanella', 'Juan', 'José', 'Campanella', 'Male', 'juan_jose_campanella.jpg'),
+(82, 'Eduardo Sacheri', 'Eduardo', '', 'Sacheri', 'Male', 'eduardo_sacheri.jpg'),
+(83, 'Ricardo Darín', 'Ricardo', '', 'Darín', 'Male', 'ricardo_darin.jpg'),
+(84, 'Soledad Villamil', 'Soledad', '', 'Villamil', 'Female', 'soledad.jpg'),
+(85, 'Emilio Kauderer', 'Emilio', '', 'Kauderer', 'Male', 'Emilio_Kauderer.jpg'),
 (91, 'Andrew', 'Andrew', ' ', 'Adamson', 'Male', 'Andrew_Adamson.jpg'),
 (92, 'Vicky', 'Vicky', ' ', 'Jenson', 'Female', 'Vicky_Jenson.jpg'),
 (93, 'Mike', 'Mike', ' ', 'Myers', 'Male', 'Mike_Myers.jpg'),
@@ -1371,12 +1359,7 @@ INSERT INTO `people` (`people_id`, `stage_name`, `first_name`, `middle_name`, `l
 (132, 'John', 'John', '', 'Logan', 'Male', 'john_logan.jpg'),
 (133, 'Russel', 'Russel', 'Crowe', '', 'Male', 'Russel_crowe'),
 (135, 'Connie Nelson', 'Connie', '', 'Connie', 'Female', 'Connie_Nelson.jpg'),
-(136, 'Joaquin Phoenix', '', '', '', 'male', 'Joaquin_Phoenix.jpg'),
-(811, 'Juan José Campanella', 'Juan', 'José', 'Campanella', 'Male', 'juan_jose_campanella.jpg'),
-(812, 'Eduardo Sacheri', 'Eduardo', '', 'Sacheri', 'Male', 'eduardo_sacheri.jpg'),
-(813, 'Ricardo Darín', 'Ricardo', '', 'Darín', 'Male', 'ricardo_darin.jpg'),
-(814, 'Soledad Villamil', 'Soledad', '', 'Villamil', 'Female', 'soledad.jpg'),
-(815, 'Emilio Kauderer', 'Emilio', '', 'Kauderer', 'Male', 'Emilio_Kauderer.jpg');
+(136, 'Joaquin Phoenix', '', '', '', 'male', 'Joaquin_Phoenix.jpg');
 
 -- --------------------------------------------------------
 
@@ -1409,12 +1392,22 @@ CREATE TABLE `songs` (
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (1, 'Soundtrack Suite', NULL, ''),
+(81, 'Her Eyes', NULL, ''),
 (91, 'I\'m a Belie', NULL, ''),
 (101, 'Pumpkin and Honey Bu', NULL, ''),
 (102, 'Jungle Boogie', NULL, ''),
 (111, 'I\'m Forrest', NULL, ''),
 (120, 'Main Title', NULL, ''),
-(811, 'Her Eyes', NULL, '');
+(121, 'Thank God for the Rain', NULL, ''),
+(122, 'Cleaning the Cab', NULL, ''),
+(123, 'They Cannot Touch Her', NULL, ''),
+(124, 'Phone Call', NULL, ''),
+(125, '.44 Magnum is a Monster', NULL, ''),
+(126, 'Listen you Screw Heads', NULL, ''),
+(127, 'Sport and Iris', NULL, ''),
+(128, 'Target Practice', NULL, ''),
+(129, 'After The Carnage', NULL, ''),
+(131, 'Now we are Free', NULL, '');
 
 -- --------------------------------------------------------
 
@@ -1433,6 +1426,7 @@ CREATE TABLE `song_keywords` (
 
 INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (1, 'orchestra'),
+(81, 'Sad'),
 (91, 'Energetic'),
 (91, 'Happy'),
 (91, 'Upbeat'),
@@ -1441,7 +1435,6 @@ INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (102, 'Wild and Peacef'),
 (111, 'Heartwarming'),
 (111, 'Sad'),
-(113, 'free'),
 (120, 'Main'),
 (121, 'God'),
 (122, 'Cab'),
@@ -1452,7 +1445,7 @@ INSERT INTO `song_keywords` (`song_id`, `keyword`) VALUES
 (127, 'Iris'),
 (128, 'Bill'),
 (129, 'Assassination'),
-(811, 'Sad');
+(131, 'free');
 
 -- --------------------------------------------------------
 
@@ -1473,21 +1466,21 @@ CREATE TABLE `song_media` (
 
 INSERT INTO `song_media` (`song_media_id`, `s_link`, `s_link_type`, `song_id`) VALUES
 (1, 'https://www.youtube.com/watch?v=Txvgd60hLPk', 'Video', 1),
+(81, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 81),
 (91, 'https://www.youtube.com/watch?v=0mYBSayCsH0', 'Video', 91),
 (102, 'https://www.youtube.com/watch?v=QGKiC2suCHQ', 'Video', 102),
 (111, 'https://www.youtube.com/watch?v=RUyZeic_BaE', 'audio', 111),
-(113, 'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video', 131),
-(120, 'https://www.youtube.com/watch?v=UCVaU-R2Qes&list=PLE3A2E610E77911BE', 'audio', 120),
-(121, 'https://www.youtube.com/watch?v=u4jEymilyF0&list=PLE3A2E610E77911BE&index=2', 'audio', 121),
-(122, 'https://www.youtube.com/watch?v=axzAska686o&list=PLE3A2E610E77911BE&index=3', 'audio', 122),
-(123, 'https://www.youtube.com/watch?v=U4d3bJYDS0Y&list=PLE3A2E610E77911BE&index=4', 'audio', 123),
-(124, 'https://www.youtube.com/watch?v=HI31d2-mPzI&list=PLE3A2E610E77911BE&index=5', 'audio', 124),
-(125, 'https://www.youtube.com/watch?v=2e-IV2aquIs&list=PLE3A2E610E77911BE&index=6', 'audio', 125),
-(126, 'https://www.youtube.com/watch?v=QZ9DmWASJFs&list=RDQZ9DmWASJFs&start_radio=1&t=26', 'audio', 126),
+(120, 'https://www.youtube.com/watch?v=UCVaU-R2Qes', 'audio', 120),
+(121, 'https://www.youtube.com/watch?v=u4jEymilyF0', 'audio', 121),
+(122, 'https://www.youtube.com/watch?v=axzAska686o', 'audio', 122),
+(123, 'https://www.youtube.com/watch?v=U4d3bJYDS0Y', 'audio', 123),
+(124, 'https://www.youtube.com/watch?v=HI31d2-mPzI', 'audio', 124),
+(125, 'https://www.youtube.com/watch?v=2e-IV2aquIs', 'audio', 125),
+(126, 'https://www.youtube.com/watch?v=QZ9DmWASJFs', 'audio', 126),
 (127, 'https://www.youtube.com/watch?v=sn1N_Pp1xmw', 'audio', 127),
 (128, 'https://www.youtube.com/watch?v=xizbq7lKTVQ', 'audio', 128),
 (129, 'https://www.youtube.com/watch?v=sv8ZYCwgssI', 'audio', 129),
-(811, 'https://www.youtube.com/watch?v=ZxsxNrbvD70', 'Video', 811);
+(131, 'https://www.youtube.com/watch?v=-yOZEiHLuVU', 'Video', 131);
 
 -- --------------------------------------------------------
 
@@ -1507,6 +1500,7 @@ CREATE TABLE `song_people` (
 
 INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 (1, 9, 'Composer'),
+(81, 85, 'Composer'),
 (91, 96, 'Composer'),
 (102, 105, 'Bass'),
 (102, 106, 'Tenor Saxophone'),
@@ -1520,8 +1514,7 @@ INSERT INTO `song_people` (`song_id`, `people_id`, `role`) VALUES
 (126, 126, 'Composer'),
 (127, 126, 'Composer'),
 (128, 126, 'Composer'),
-(129, 126, 'Composer'),
-(811, 815, 'Composer');
+(129, 126, 'Composer');
 
 -- --------------------------------------------------------
 
@@ -1567,7 +1560,8 @@ ALTER TABLE `movie_keywords`
 -- Indexes for table `movie_media`
 --
 ALTER TABLE `movie_media`
-  ADD PRIMARY KEY (`movie_media_id`);
+  ADD PRIMARY KEY (`movie_media_id`),
+  ADD KEY `delete_cascade_movie_media` (`movie_id`);
 
 --
 -- Indexes for table `movie_numbers`
@@ -1579,25 +1573,29 @@ ALTER TABLE `movie_numbers`
 -- Indexes for table `movie_people`
 --
 ALTER TABLE `movie_people`
-  ADD PRIMARY KEY (`movie_id`,`people_id`,`role`,`screen_name`);
+  ADD PRIMARY KEY (`movie_id`,`people_id`,`role`,`screen_name`),
+  ADD KEY `delete_cascade_movie_people_people_id` (`people_id`);
 
 --
 -- Indexes for table `movie_quotes`
 --
 ALTER TABLE `movie_quotes`
-  ADD PRIMARY KEY (`movie_quote_id`);
+  ADD PRIMARY KEY (`movie_quote_id`),
+  ADD KEY `delete_cascade_movie_quotes` (`movie_id`);
 
 --
 -- Indexes for table `movie_song`
 --
 ALTER TABLE `movie_song`
-  ADD PRIMARY KEY (`movie_id`,`song_id`);
+  ADD PRIMARY KEY (`movie_id`,`song_id`),
+  ADD KEY `delete_cascade_movie_song_song_id` (`song_id`);
 
 --
 -- Indexes for table `movie_trivia`
 --
 ALTER TABLE `movie_trivia`
-  ADD PRIMARY KEY (`movie_trivia_id`);
+  ADD PRIMARY KEY (`movie_trivia_id`),
+  ADD KEY `delete_cascade_movie_trivia` (`movie_id`);
 
 --
 -- Indexes for table `people`
@@ -1609,7 +1607,8 @@ ALTER TABLE `people`
 -- Indexes for table `people_trivia`
 --
 ALTER TABLE `people_trivia`
-  ADD PRIMARY KEY (`people_trivia_id`);
+  ADD PRIMARY KEY (`people_trivia_id`),
+  ADD KEY `  delete_cascade_people_trivia` (`people_id`);
 
 --
 -- Indexes for table `songs`
@@ -1627,19 +1626,22 @@ ALTER TABLE `song_keywords`
 -- Indexes for table `song_media`
 --
 ALTER TABLE `song_media`
-  ADD PRIMARY KEY (`song_media_id`);
+  ADD PRIMARY KEY (`song_media_id`),
+  ADD KEY `delete_cascade_song_media` (`song_id`);
 
 --
 -- Indexes for table `song_people`
 --
 ALTER TABLE `song_people`
-  ADD PRIMARY KEY (`song_id`,`people_id`,`role`);
+  ADD PRIMARY KEY (`song_id`,`people_id`,`role`),
+  ADD KEY `delete_cascade_song_people_people_id` (`people_id`);
 
 --
 -- Indexes for table `song_trivia`
 --
 ALTER TABLE `song_trivia`
-  ADD PRIMARY KEY (`song_trivia_id`);
+  ADD PRIMARY KEY (`song_trivia_id`),
+  ADD KEY `delete_cascade_song_trivia` (`song_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1650,6 +1652,97 @@ ALTER TABLE `song_trivia`
 --
 ALTER TABLE `movies`
   MODIFY `movie_id` int(6) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2001;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `movie_anagrams`
+--
+ALTER TABLE `movie_anagrams`
+  ADD CONSTRAINT `delete_cascade_movie_anagrams` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_data`
+--
+ALTER TABLE `movie_data`
+  ADD CONSTRAINT `delete_cascade_movie_data` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_keywords`
+--
+ALTER TABLE `movie_keywords`
+  ADD CONSTRAINT `delete_cascade_movie_keywords` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_media`
+--
+ALTER TABLE `movie_media`
+  ADD CONSTRAINT `delete_cascade_movie_media` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_numbers`
+--
+ALTER TABLE `movie_numbers`
+  ADD CONSTRAINT `delete_cascade_movie_numbers` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_people`
+--
+ALTER TABLE `movie_people`
+  ADD CONSTRAINT `delete_cascade_movie_people_movie_id` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `delete_cascade_movie_people_people_id` FOREIGN KEY (`people_id`) REFERENCES `people` (`people_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_quotes`
+--
+ALTER TABLE `movie_quotes`
+  ADD CONSTRAINT `delete_cascade_movie_quotes` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_song`
+--
+ALTER TABLE `movie_song`
+  ADD CONSTRAINT `delete_cascade_movie_song_movie_id` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `delete_cascade_movie_song_song_id` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `movie_trivia`
+--
+ALTER TABLE `movie_trivia`
+  ADD CONSTRAINT `delete_cascade_movie_trivia` FOREIGN KEY (`movie_id`) REFERENCES `movies` (`movie_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `people_trivia`
+--
+ALTER TABLE `people_trivia`
+  ADD CONSTRAINT `  delete_cascade_people_trivia` FOREIGN KEY (`people_id`) REFERENCES `people` (`people_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `song_keywords`
+--
+ALTER TABLE `song_keywords`
+  ADD CONSTRAINT `delete_cascade_song_keywords` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `song_media`
+--
+ALTER TABLE `song_media`
+  ADD CONSTRAINT `delete_cascade_song_media` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `song_people`
+--
+ALTER TABLE `song_people`
+  ADD CONSTRAINT `delete_cascade_song_people_people_id` FOREIGN KEY (`people_id`) REFERENCES `people` (`people_id`) ON DELETE CASCADE ON UPDATE NO ACTION,
+  ADD CONSTRAINT `delete_cascade_song_people_song_id` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `song_trivia`
+--
+ALTER TABLE `song_trivia`
+  ADD CONSTRAINT `delete_cascade_song_trivia` FOREIGN KEY (`song_id`) REFERENCES `songs` (`song_id`) ON DELETE CASCADE ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
