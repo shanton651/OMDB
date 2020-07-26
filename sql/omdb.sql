@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jul 16, 2020 at 03:34 AM
+-- Generation Time: Jul 26, 2020 at 07:25 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.3.17
 
@@ -1053,6 +1053,13 @@ CREATE TABLE `movie_anagrams` (
   `anagram` varchar(180) COLLATE utf8mb4_unicode_ci NOT NULL COMMENT 'anagram of native name'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `movie_anagrams`
+--
+
+INSERT INTO `movie_anagrams` (`movie_id`, `anagram`) VALUES
+(11, 'Performs Tug');
+
 -- --------------------------------------------------------
 
 --
@@ -1077,7 +1084,7 @@ INSERT INTO `movie_data` (`tag_line`, `movie_id`, `language`, `country`, `genre`
 ('', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. \r\nWith the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
 ('', 9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 ('', 10, 'English', 'USA', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
-('', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
+('The story of a lifetime', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
 ('', 12, 'english', 'United States', 'Noir', 'A Taxi Driver explores New York'),
 ('', 13, 'English', 'USA', 'Action', 'Maximus loses everything and is now tasked to save an empire and to avenge his family and to continue Marcus legacy.');
 
@@ -1139,7 +1146,6 @@ CREATE TABLE `movie_media` (
 --
 
 INSERT INTO `movie_media` (`movie_media_id`, `m_link`, `m_link_type`, `movie_id`) VALUES
-
 (21, 'Vertigomovie_restoration.jpg', 'poster', 2),
 (22, 'vertigo_poster2.jpg', 'poster', 2),
 (23, 'vertigo_poster3.jpg', 'poster', 2),
@@ -1169,6 +1175,13 @@ CREATE TABLE `movie_numbers` (
   `budget` int(8) DEFAULT NULL COMMENT 'budget in local (native) currency',
   `box_office` int(8) DEFAULT NULL COMMENT 'box office numbers in local (native) currency'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `movie_numbers`
+--
+
+INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `weight`, `budget`, `box_office`) VALUES
+(11, 142, 12, 1, 1, 55, 678);
 
 -- --------------------------------------------------------
 
@@ -1234,6 +1247,13 @@ CREATE TABLE `movie_quotes` (
   `movie_quote_id` int(6) NOT NULL,
   `movie_quote_name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `movie_quotes`
+--
+
+INSERT INTO `movie_quotes` (`movie_id`, `movie_quote_id`, `movie_quote_name`) VALUES
+(11, 111, 'Stupid is as stupid does.');
 
 -- --------------------------------------------------------
 
@@ -1373,6 +1393,13 @@ CREATE TABLE `people_trivia` (
   `people_trivia_name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `people_trivia`
+--
+
+INSERT INTO `people_trivia` (`people_id`, `people_trivia_id`, `people_trivia_name`) VALUES
+(114, 111, 'Tom Hanks voices Woody from Toy Story.');
+
 -- --------------------------------------------------------
 
 --
@@ -1396,14 +1423,14 @@ INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (91, 'I\'m a Belie', NULL, ''),
 (101, 'Pumpkin and Honey Bu', NULL, ''),
 (102, 'Jungle Boogie', NULL, ''),
-(111, 'I\'m Forrest', NULL, ''),
+(111, 'I\'m Forrest', NULL, 'Hopeful'),
 (120, 'Main Title', NULL, ''),
-(121, 'Thank God for the Rain', NULL, ''),
+(121, 'Thank God for the Ra', NULL, ''),
 (122, 'Cleaning the Cab', NULL, ''),
-(123, 'They Cannot Touch Her', NULL, ''),
+(123, 'They Cannot Touch He', NULL, ''),
 (124, 'Phone Call', NULL, ''),
-(125, '.44 Magnum is a Monster', NULL, ''),
-(126, 'Listen you Screw Heads', NULL, ''),
+(125, '.44 Magnum is a Mons', NULL, ''),
+(126, 'Listen you Screw Hea', NULL, ''),
 (127, 'Sport and Iris', NULL, ''),
 (128, 'Target Practice', NULL, ''),
 (129, 'After The Carnage', NULL, ''),
@@ -1527,6 +1554,13 @@ CREATE TABLE `song_trivia` (
   `song_trivia_id` int(6) NOT NULL,
   `song_trivia_name` varchar(300) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `song_trivia`
+--
+
+INSERT INTO `song_trivia` (`song_id`, `song_trivia_id`, `song_trivia_name`) VALUES
+(111, 111, 'All Music rated Alan Silvestri\'s soundtrack of Forrest Gump three stars and consider it to be saccharine.');
 
 --
 -- Indexes for dumped tables
