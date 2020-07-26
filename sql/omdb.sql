@@ -1058,6 +1058,7 @@ CREATE TABLE `movie_anagrams` (
 --
 
 INSERT INTO `movie_anagrams` (`movie_id`, `anagram`) VALUES
+(8, ''),
 (11, 'Performs Tug');
 
 -- --------------------------------------------------------
@@ -1081,7 +1082,7 @@ CREATE TABLE `movie_data` (
 
 INSERT INTO `movie_data` (`tag_line`, `movie_id`, `language`, `country`, `genre`, `plot`) VALUES
 ('', 2, 'English', 'United States', 'mystery', 'A former police detective juggles wrestling with his personal demons and becoming obsessed with a hauntingly beautiful woman.'),
-('', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. \r\nWith the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
+('Psychological thriller film', 8, 'Spanish', 'Spain', 'Mystery', 'Hoping to put to rest years of unease concerning a past case, retired criminal investigator Benjamín Espósito (Ricardo Darín) begins writing a novel based on the decades-old unsolved mystery of a newlywed\'s rape and murder. \r\nWith the help of a former colleague, Judge Irene Menéndez Hastings (Soledad Villamil), Benjamín attempts to make sense of the past. The journey through his memories sets Benjamín on a thrilling emotional path that leads to a shocking realization.'),
 ('', 9, 'English', 'USA', 'Comedy', 'An ogre named Shrek wants to protect his swamp. This starts an adventure. Oh yeah, he meets a talking donkey too.'),
 ('', 10, 'English', 'USA', 'Crime', 'The lives of two mob hitmen, a boxer, a gangster and his wife, and a pair of diner bandits intertwine in four tales of violence and redemption.'),
 ('The story of a lifetime', 11, 'English', 'USA', 'Drama', 'The presidencies of Kennedy and Johnson, the events of Vietnam, Watergate and other historical events unfold through the perspective of an Alabama man with an IQ of 75, whose only desire is to be reunited with his childhood sweetheart.'),
@@ -1181,6 +1182,7 @@ CREATE TABLE `movie_numbers` (
 --
 
 INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `weight`, `budget`, `box_office`) VALUES
+(8, 111, 24, 1, 1, 20, 35),
 (11, 142, 12, 1, 1, 55, 678);
 
 -- --------------------------------------------------------
@@ -1253,6 +1255,7 @@ CREATE TABLE `movie_quotes` (
 --
 
 INSERT INTO `movie_quotes` (`movie_id`, `movie_quote_id`, `movie_quote_name`) VALUES
+(8, 81, 'The dog probably had rabies. You are gonna die'),
 (11, 111, 'Stupid is as stupid does.');
 
 -- --------------------------------------------------------
@@ -1306,6 +1309,8 @@ CREATE TABLE `movie_trivia` (
 --
 
 INSERT INTO `movie_trivia` (`movie_id`, `movie_trivia_id`, `movie_trivia_name`) VALUES
+(8, 81, 'Julia Roberts mother passed away during the production'),
+(8, 82, 'The Secret in Their Eyes is based on a novel.'),
 (10, 101, 'Pulp Fiction only cost $8 million to make.'),
 (11, 111, 'Forrest Gump is based on a novel.'),
 (12, 112, 'Harvey Keitel rehearsed with pimps to prepare for his role.');
@@ -1398,6 +1403,7 @@ CREATE TABLE `people_trivia` (
 --
 
 INSERT INTO `people_trivia` (`people_id`, `people_trivia_id`, `people_trivia_name`) VALUES
+(81, 81, 'The director of the original film, Juan José Campanella, worked as an executive producer on this remake'),
 (114, 111, 'Tom Hanks voices Woody from Toy Story.');
 
 -- --------------------------------------------------------
@@ -1419,7 +1425,7 @@ CREATE TABLE `songs` (
 
 INSERT INTO `songs` (`song_id`, `title`, `lyrics`, `theme`) VALUES
 (1, 'Soundtrack Suite', NULL, ''),
-(81, 'Her Eyes', NULL, ''),
+(81, 'Her Eyes', NULL, 'Classic'),
 (91, 'I\'m a Belie', NULL, ''),
 (101, 'Pumpkin and Honey Bu', NULL, ''),
 (102, 'Jungle Boogie', NULL, ''),
@@ -1560,6 +1566,7 @@ CREATE TABLE `song_trivia` (
 --
 
 INSERT INTO `song_trivia` (`song_id`, `song_trivia_id`, `song_trivia_name`) VALUES
+(81, 81, 'Emilio Kauderer decided to collaborate with Federico Jusid for this song.'),
 (111, 111, 'All Music rated Alan Silvestri\'s soundtrack of Forrest Gump three stars and consider it to be saccharine.');
 
 --
