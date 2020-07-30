@@ -1059,7 +1059,8 @@ CREATE TABLE `movie_anagrams` (
 
 INSERT INTO `movie_anagrams` (`movie_id`, `anagram`) VALUES
 (8, ''),
-(11, 'Performs Tug');
+(11, 'Performs Tug'),
+(13,'');
 
 -- --------------------------------------------------------
 
@@ -1183,7 +1184,8 @@ CREATE TABLE `movie_numbers` (
 
 INSERT INTO `movie_numbers` (`movie_id`, `running_time`, `length`, `strength`, `weight`, `budget`, `box_office`) VALUES
 (8, 111, 24, 1, 1, 20, 35),
-(11, 142, 12, 1, 1, 55, 678);
+(11, 142, 12, 1, 1, 55, 678),
+(13, 155, 14, 1, 1, 103, 460);
 
 -- --------------------------------------------------------
 
@@ -1256,7 +1258,8 @@ CREATE TABLE `movie_quotes` (
 
 INSERT INTO `movie_quotes` (`movie_id`, `movie_quote_id`, `movie_quote_name`) VALUES
 (8, 81, 'The dog probably had rabies. You are gonna die'),
-(11, 111, 'Stupid is as stupid does.');
+(11, 111, 'Stupid is as stupid does.'),
+(13, 131, 'Brothers, what we do in life echoes in eternity.');
 
 -- --------------------------------------------------------
 
@@ -1313,7 +1316,8 @@ INSERT INTO `movie_trivia` (`movie_id`, `movie_trivia_id`, `movie_trivia_name`) 
 (8, 82, 'The Secret in Their Eyes is based on a novel.'),
 (10, 101, 'Pulp Fiction only cost $8 million to make.'),
 (11, 111, 'Forrest Gump is based on a novel.'),
-(12, 112, 'Harvey Keitel rehearsed with pimps to prepare for his role.');
+(12, 112, 'Harvey Keitel rehearsed with pimps to prepare for his role.'),
+(13, 131, 'Commodus in real history never fought in the colosseum.');
 
 -- --------------------------------------------------------
 
@@ -1404,7 +1408,8 @@ CREATE TABLE `people_trivia` (
 
 INSERT INTO `people_trivia` (`people_id`, `people_trivia_id`, `people_trivia_name`) VALUES
 (81, 81, 'The director of the original film, Juan José Campanella, worked as an executive producer on this remake'),
-(114, 111, 'Tom Hanks voices Woody from Toy Story.');
+(114, 111, 'Tom Hanks voices Woody from Toy Story.'),
+(133, 131, 'Russel Crowe scar from the movie was caused by a horse.');
 
 -- --------------------------------------------------------
 
@@ -1567,7 +1572,8 @@ CREATE TABLE `song_trivia` (
 
 INSERT INTO `song_trivia` (`song_id`, `song_trivia_id`, `song_trivia_name`) VALUES
 (81, 81, 'Emilio Kauderer decided to collaborate with Federico Jusid for this song.'),
-(111, 111, 'All Music rated Alan Silvestri\'s soundtrack of Forrest Gump three stars and consider it to be saccharine.');
+(111, 111, 'All Music rated Alan Silvestri\'s soundtrack of Forrest Gump three stars and consider it to be saccharine.'),
+(131, 131, 'Gladiator music was taken to the next level by Hans Zimmer.');
 
 --
 -- Indexes for dumped tables
