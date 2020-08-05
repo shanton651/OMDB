@@ -56,6 +56,10 @@ FROM songs;
 
 -----------------------------------------------------------
 -- Give me the list all movies in which a person acted as “Leading Actor”
+  --Query Number: 3
+--Query Description: Give me the list all movies in which a person acted as “Leading Actor”
+--Author: Misky Abshir
+
 -- By: Abdullahi Mohamed
 -----------------------------------------------------------
 -- BEFORE
