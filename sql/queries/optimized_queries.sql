@@ -52,3 +52,26 @@ INSERT INTO songs (title, lyrics, theme)
 SELECT title, lyrics, theme 
 FROM songs;
 
+
+-----------------------------------------------------------
+-- Query to find all movies based on genre
+-- Edited by Christopher Pellegrino
+-- By: Kathy Thao (Cougars, Query 5)
+-----------------------------------------------------------
+-- BEFORE
+----------------------------------------------------
+
+SELECT *
+FROM movies
+INNER JOIN movie_data ON (movies.movie_id = movie_data.movie_id)
+WHERE movie_data.genre = "Mystery";
+
+
+-- AFTER (added indexed attributes)
+----------------------------------------------------
+
+SELECT movies.movie_id, movies.native_name, movies.year_made, movie_data.genre
+FROM movies
+INNER JOIN movie_data ON (movies.movie_id = movie_data.movie_id)
+WHERE movie_data.genre = "Mystery";
+
