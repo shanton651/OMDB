@@ -53,7 +53,7 @@ SELECT title, lyrics, theme
 FROM songs;
 
 
------------------------------------------------------------
+------------------------------------------------------------
 -- Give me the list all movies in which a person acted as “Leading Actor”
   --Query Number: 3
 --Query Description: Give me the list all movies in which a person acted as “Leading Actor”
@@ -97,4 +97,29 @@ FROM `movies`
 WHERE movie_id IN (SELECT movie_id
                   FROM movie_people NATURAL JOIN people
                   WHERE people.stage_name = '' OR people.stage_name = '')
+                  
+                  
+                  
+-----------------------------------------------------------
+-- Query to find all movies based on genre
+-- Edited by Christopher Pellegrino
+-- By: Kathy Thao (Cougars, Query 5)
+-----------------------------------------------------------
+-- BEFORE
+----------------------------------------------------
 
+SELECT *
+FROM movies
+INNER JOIN movie_data ON (movies.movie_id = movie_data.movie_id)
+WHERE movie_data.genre = "Mystery";
+
+
+-- AFTER (added indexed attributes)
+----------------------------------------------------
+
+SELECT movies.movie_id, movies.native_name, movies.year_made, movie_data.genre
+FROM movies
+INNER JOIN movie_data ON (movies.movie_id = movie_data.movie_id)
+WHERE movie_data.genre = "Mystery";
+
+-----------------------------------------------------------------------------
