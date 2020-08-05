@@ -53,6 +53,26 @@ SELECT title, lyrics, theme
 FROM songs;
 
 
+-----------------------------------------------------------
+-- Give me the list all movies in which a person acted as “Leading Actor”
+  --Query Number: 3
+--Query Description: Give me the list all movies in which a person acted as “Leading Actor”
+--Author: Misky Abshir
+
+-- By: Abdullahi Mohamed
+-----------------------------------------------------------
+-- BEFORE
+----------------------------------------------------
+
+SELECT *
+FROM movies
+INNER JOIN movie_people ON (movies.movie_id = movie_people.movie_id)
+WHERE role = 'Lead Actor' AND people_id = 2;
+
+-- AFTER
+----------------------------------------------------
+SELECT movies.movie_id, movies.native_name, movies.year_made,movie_people.role FROM movies INNER JOIN movie_people ON (movies.movie_id = movie_people.movie_id) WHERE role = 'Lead Actor' AND people_id = 2
+
 
 -----------------------------------------------------------------------------
 -- Query to Lists all movies where person x or person y appear (put stage
@@ -77,3 +97,4 @@ FROM `movies`
 WHERE movie_id IN (SELECT movie_id
                   FROM movie_people NATURAL JOIN people
                   WHERE people.stage_name = '' OR people.stage_name = '')
+
