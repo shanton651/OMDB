@@ -52,3 +52,23 @@ INSERT INTO songs (title, lyrics, theme)
 SELECT title, lyrics, theme 
 FROM songs;
 
+
+
+-----------------------------------------------------------
+-- Give me the list all movies in which a person acted as “Leading Actor”
+-- By: Abdullahi Mohamed
+-----------------------------------------------------------
+-- BEFORE
+----------------------------------------------------
+
+SELECT *
+FROM movies
+INNER JOIN movie_people ON (movies.movie_id = movie_people.movie_id)
+WHERE role = 'Lead Actor' AND people_id = 2;
+
+-- AFTER
+----------------------------------------------------
+SELECT movies.movie_id, movies.native_name, movies.year_made,movie_people.role FROM movies INNER JOIN movie_people ON (movies.movie_id = movie_people.movie_id) WHERE role = 'Lead Actor' AND people_id = 2
+
+
+
