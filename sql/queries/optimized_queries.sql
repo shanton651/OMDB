@@ -123,3 +123,37 @@ INNER JOIN movie_data ON (movies.movie_id = movie_data.movie_id)
 WHERE movie_data.genre = "Mystery";
 
 -----------------------------------------------------------------------------
+
+-----------------------------------------------------
+-- Custom Query to SELECT all movies released by directors OR producers. 
+-- By: Spencer Hanton
+-----------------------------------------------------
+--BEFORE
+-----------------------------------------------------
+SELECT people.first_name, people.last_name, movies.movie_id, movies.english_name, movie_people.people_id,movie_people.role
+FROM movies
+JOIN movie_people
+ON movies.movie_id = movie_people.movie_id
+JOIN people 
+ON movie_people.people_id = people.people_id
+WHERE movie_people.role ='Director' OR movie_people.role = 'Producer';
+
+-------------------------------------------------------
+--AFTER
+-------------------------------------------------------
+SELECT people.first_name, people.last_name, movies.movie_id, movies.english_name, movie_people.people_id,movie_people.role
+FROM movies
+JOIN movie_people
+ON movies.movie_id = movie_people.movie_id
+JOIN people 
+ON movie_people.people_id = people.people_id
+WHERE movie_people.role ='Director' 
+UNION 
+SELECT people.first_name, people.last_name, movies.movie_id, movies.english_name, movie_people.people_id,movie_people.role
+FROM movies
+JOIN movie_people
+ON movies.movie_id = movie_people.movie_id
+JOIN people 
+ON movie_people.people_id = people.people_id
+WHERE movie_people.role ='Director'
+
